@@ -1,0 +1,1 @@
+(function hitokoto(){var hitokoto="山不在高，有仙则名。水不在深，有龙则灵。";var dom=document.querySelector('#hitokoto');Array.isArray(dom)?dom[0].innerText=hitokoto:dom.innerText=hitokoto;})()
