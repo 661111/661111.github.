@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://blog.zytllt.cn/category/richang/ -->
+<html lang="zh-cn" x-data="data()" x-init="$watch(&#39;darkMode&#39;, val =&gt; localStorage.setItem(&#39;dark&#39;, val))" :class="{ &#39;dark&#39;: darkMode }" :data-theme="darkMode?&#39;dark&#39;:&#39;&#39;" data-theme=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">.amap-logo{display:block!important;pointer-events:none;}</style><style type="text/css" class="AMap.style">.vml{behavior:url(#default#VML);display:inline-block;position:absolute}.amap-custom{top:0;left:0;position:absolute}.amap-container img{max-width:none!important;max-height:none!important}.amap-container{touch-action:none;position:relative;overflow:hidden;background:#fcf9f2 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0AgMAAAC2uDcZAAAADFBMVEX////////////////1pQ5zAAAABHRSTlMAgP/AWuZC2AAAAVhJREFUeAFiYGAQYGDEQjAB2rcDC4BiGIqiU7abdKlO2QkeIClyPsDHweMKtOPHIJ1Op6/w7Y4fdqfT6VpndzqdrnV2p9PpWmd3Oj3qWndSoKp+2J1Op7vr7E6n07XO7nQ6XevsTqfTtc7udPo4/f787E6n0911dqfT6VpndzqdrnV2p9PpWmd3Ot27Ce8m6HS6u85dR6fTtU7r6HS61mkdnU7XOrvT6XTvJuxOp9PddXan0+laZ3c6na51dDpd67SOTqd7N+HdBJ1Od9e56+h0utZpHZ1O1zq70+l0rbM7nU73bsLudDrdXWd3Ol3rtI5Op2ud1tHpdK3TOjqd7t2EdxN0Ot1dZ3c6na51dqfT6VpndzqdrnV2p9Pp3k3Q6XR3nbuOTqdrndbR6XSt0zo6na51Wken072bsDudTnfX2Z1Op2ud3el0utbZnU7XOq2j0+t0uncTD1gO4zoT5doZAAAAAElFTkSuQmCC);-ms-touch-action:none}.amap-drags,.amap-layers{width:100%;height:100%;position:absolute;overflow:hidden}.amap-layers canvas{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.amap-layer img{pointer-events:none}.amap-e,.amap-maps{width:100%;height:100%}.amap-maps,.amap-e,.amap-layers,.amap-tile,.amap-tile-container{position:absolute;left:0;top:0;overflow:hidden}.amap-context{position:absolute;left:0;top:0}.amap-overlays,.amap-markers,.amap-marker{position:absolute;left:0;top:0}.amap-layers{z-index:0}.amap-overlays{z-index:110;cursor:default}.amap-markers{z-index:120}.amap-controls{z-index:150}.amap-copyright{position:absolute;display:block!important;left:77px;height:16px;bottom:0;padding-bottom:3px;font-size:11px;font-family:Arial,sans-serif;z-index:160}.amap-logo{position:absolute;bottom:1px;left:1px;z-index:160;height:20px}.amap-logo img{width:73px!important;height:20px!important;border:0;vertical-align:baseline!important}.amap-icon{position:relative;z-index:1}.amap-icon img{position:absolute;z-index:-1}.amap-marker-label{position:absolute;z-index:2;border:1px solid blue;background-color:white;white-space:nowrap;cursor:default;padding:3px;font-size:12px;line-height:14px}.amap-info{position:absolute;left:0;z-index:140;width:320px}.amap-menu{position:absolute;z-index:140;_width:100px}.amap-info-close{position:absolute;right:5px;_right:12px;+right:11px;top:5px;_top:2px;+top:2px;color:#c3c3c3;text-decoration:none;font:bold 16px/14px Tahoma,Verdana,sans-serif;width:14px;height:14px}.amap-info-outer,.amap-menu-outer{box-shadow:0 1px 2px rgba(0,0,0,0.1);background:none repeat scroll 0 0 white;border-radius:2px;padding:1px;text-align:left}.amap-menu-outer:hover{box-shadow:0 1px 2px rgba(0,0,0,0.3)}.amap-info-contentContainer:hover .amap-info-outer{box-shadow:0 1px 2px rgba(0,0,0,0.3)}.amap-info-content{position:relative;background:#fff;padding:10px 18px 10px 10px;line-height:1.4;overflow:auto}.amap-marker-content{position:relative}.amap-info{_width:320px}.amap-menu{_width:100px}.amap-info-sharp-old{overflow:hidden;position:absolute;background-image:url(http://webapi.amap.com/images/arrows.png)}.bottom-center .amap-info-sharp-old{height:12px;margin:0 auto;width:20px;background-position:center 12px;top:100%;margin-top:-9px;left:50%;margin-left:-10px}.bottom-left .amap-info-sharp-old{height:12px;width:13px;background-position:-16px -46px;top:100%;margin-top:-9px}.bottom-right .amap-info-sharp-old{height:12px;width:13px;top:-1px;background-position:-56px -46px;left:100%;margin-left:-13px;top:100%;margin-top:-9px}.middle-left .amap-info-sharp-old{height:20px;width:12px;background-position:left;top:50%;margin-top:-10px;margin-left:-11px}.center .amap-info-sharp-old{display:none}.middle-right .amap-info-sharp-old{height:20px;margin-right:0;width:12px;background-position:right;left:100%;margin-left:-9px;top:50%;margin-top:-10px}.top-center .amap-info-sharp-old{height:12px;margin:0 auto;width:20px;background-position:top;top:0;margin-top:-3px;left:50%;margin-left:-10px}.top-left .amap-info-sharp-old{height:12px;width:13px;background-position:-16px -3px;top:0;margin-top:-3px}.top-right .amap-info-sharp-old{height:12px;width:13px;background-position:-56px -3px;left:100%;margin-left:-13px;top:0;margin-top:-3px}.amap-info-sharp{position:absolute}.bottom-center .amap-info-sharp{bottom:0;left:50%;margin-left:-8px;border-left:8px solid transparent;border-right:8px solid transparent;border-top:8px solid #fff}.bottom-center .amap-info-sharp:after{position:absolute;content:"";margin-left:-8px;margin-top:-7px;border-left:8px solid transparent;border-right:8px solid transparent;border-top:8px solid rgba(0,0,0,0.3);filter:blur(2px);z-index:-1}.amap-info-contentContainer:hover.bottom-center .amap-info-sharp:after{border-top:8px solid rgba(0,0,0,0.5)}.bottom-left .amap-info-sharp{border-color:transparent #fff;border-width:0 0 10px 10px;border-style:solid}.bottom-left .amap-info-sharp:after{position:absolute;content:"";margin-left:-10px;border-color:transparent rgba(0,0,0,0.3);border-width:0 0 10px 10px;border-style:solid;filter:blur(1px);z-index:-1}.amap-info-contentContainer:hover.bottom-left .amap-info-sharp:after{border-color:transparent rgba(0,0,0,0.5)}.bottom-left .amap-info-content{border-radius:2px 2px 2px 0}.bottom-right .amap-info-sharp{right:0;border-top:10px solid #fff;border-left:10px solid transparent}.bottom-right .amap-info-sharp:after{position:absolute;margin-top:-9px;margin-left:-10px;content:"";border-top:10px solid rgba(0,0,0,0.3);border-left:10px solid transparent;filter:blur(1px);z-index:-1}.amap-info-contentContainer:hover.bottom-right .amap-info-sharp:after{border-top:10px solid rgba(0,0,0,0.5)}.bottom-right .amap-info-content{border-radius:2px 2px 0 2px}.top-center .amap-info-sharp{top:0;left:50%;margin-left:-8px;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:8px solid #fff}.top-center .amap-info-sharp:after{position:absolute;content:"";margin-top:0;margin-left:-8px;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:8px solid rgba(0,0,0,0.3);filter:blur(1px);z-index:-1}.top-left .amap-info-sharp{left:0;top:0;border-bottom:10px solid #fff;border-right:10px solid transparent}.top-left .amap-info-sharp:after{position:absolute;content:"";margin-top:0;margin-left:0;border-bottom:10px solid rgba(0,0,0,0.3);border-right:10px solid transparent;filter:blur(1px);z-index:-1}.top-right .amap-info-sharp{right:0;top:0;border-bottom:10px solid #fff;border-left:10px solid transparent}.top-right .amap-info-sharp:after{position:absolute;content:"";margin-top:0;margin-left:-10px;border-bottom:10px solid rgba(0,0,0,0.3);border-left:10px solid transparent;filter:blur(1px);z-index:-1}.middle-right .amap-info-sharp{right:0;top:50%;margin-top:-8px;border-top:8px solid transparent;border-left:8px solid #fff;border-bottom:8px solid transparent}.middle-right .amap-info-sharp:after{position:absolute;content:"";margin-top:-8px;margin-left:-8px;border-top:8px solid transparent;border-left:8px solid rgba(0,0,0,0.3);border-bottom:8px solid transparent;filter:blur(1px);z-index:-1}.amap-info-contentContainer:hover.middle-right .amap-info-sharp:after{border-left:8px solid rgba(0,0,0,0.5)}.middle-left .amap-info-sharp{left:0;top:50%;margin-top:-8px;border-top:8px solid transparent;border-right:8px solid #fff;border-bottom:8px solid transparent}.middle-left .amap-info-sharp:after{position:absolute;content:"";margin-top:-8px;margin-left:0;border-top:8px solid transparent;border-right:8px solid rgba(0,0,0,0.3);border-bottom:8px solid transparent;filter:blur(1px);z-index:-1}.amap-info-contentContainer:hover.middle-left .amap-info-sharp:after{border-right:8px solid rgba(0,0,0,0.5)}.amap-info-contentContainer.top-left,.amap-info-contentContainer.top-center,.amap-info-contentContainer.top-right{padding-top:8px}.amap-info-contentContainer.bottom-left,.amap-info-contentContainer.bottom-center,.amap-info-contentContainer.bottom-right{padding-bottom:8px}.amap-info-contentContainer.middle-right{padding-right:8px}.amap-info-contentContainer.middle-left{padding-left:8px}.amap-menu-outer{margin:0;padding:0;list-style-type:none}ul.amap-menu-outer li{cursor:pointer;height:35px;line-height:35px;word-break:break-all;padding:0 10px;font-size:12px;white-space:nowrap}ul.amap-menu-outer li a{text-decoration:none;font-size:13px;margin:0 5px;color:#000;padding:5px 5px}ul.amap-menu-outer li:hover{background-color:#f3f3ee}.amap-overlay-text-container{display:block;width:auto;word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:#fff;padding:2px 3px;border:1px solid #ccc;border-radius:3px}.amap-overlay-text-container.amap-overlay-text-empty{display:none}.amap-info-content-ie8{border:1px solid #9c9c9c}</style>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="日常生活的分享">
+<meta name="keywords" content="日常生活☀">
+<meta name="generator" content="Typecho 1.2.0">
+<meta name="template" content="Cuteen">
+<link rel="pingback" href="https://blog.zytllt.cn/action/xmlrpc">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blog.zytllt.cn/action/xmlrpc?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blog.zytllt.cn/action/xmlrpc?wlw">
+<link rel="alternate" type="application/rss+xml" title="日常生活☀ » Anwen&#39;s Blog - 安稳博客! » RSS 2.0" href="https://blog.zytllt.cn/feed/category/richang/">
+<link rel="alternate" type="application/rdf+xml" title="日常生活☀ » Anwen&#39;s Blog - 安稳博客! » RSS 1.0" href="https://blog.zytllt.cn/feed/rss/category/richang/">
+<link rel="alternate" type="application/atom+xml" title="日常生活☀ » Anwen&#39;s Blog - 安稳博客! » ATOM 1.0" href="https://blog.zytllt.cn/feed/atom/category/richang/">
+<link rel="stylesheet" type="text/css" href="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/calendar.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+        <link rel="icon" type="image/png" href="https://you.zytllt.cn/logo/t.ico"><link rel="apple-touch-icon-precomposed" href="https://you.zytllt.cn/logo/t.ico">    <title>分类 日常生活☀ 下的文章 - Anwen's Blog - 安稳博客!</title>
+        <link rel="stylesheet" href="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/style.css">
+    <link rel="stylesheet" href="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/typography.css">
+            <link rel="stylesheet" :href="darkMode?&#39;https://blog.zytllt.cn/usr/themes/Cuteen/static/css/prism.css&#39;:&#39;https://blog.zytllt.cn/usr/themes/Cuteen/static/css/prism-light.css&#39;" href="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/prism-light.css">
+        <style class="fslightbox-styles">.fslightbox-absoluted{position:absolute;top:0;left:0}.fslightbox-fade-in{animation:fslightbox-fade-in .3s cubic-bezier(0,0,.7,1)}.fslightbox-fade-out{animation:fslightbox-fade-out .3s ease}.fslightbox-fade-in-strong{animation:fslightbox-fade-in-strong .3s cubic-bezier(0,0,.7,1)}.fslightbox-fade-out-strong{animation:fslightbox-fade-out-strong .3s ease}@keyframes fslightbox-fade-in{from{opacity:.65}to{opacity:1}}@keyframes fslightbox-fade-out{from{opacity:.35}to{opacity:0}}@keyframes fslightbox-fade-in-strong{from{opacity:.3}to{opacity:1}}@keyframes fslightbox-fade-out-strong{from{opacity:1}to{opacity:0}}.fslightbox-cursor-grabbing{cursor:grabbing}.fslightbox-full-dimension{width:100%;height:100%}.fslightbox-open{overflow:hidden;height:100%}.fslightbox-flex-centered{display:flex;justify-content:center;align-items:center}.fslightbox-opacity-0{opacity:0!important}.fslightbox-opacity-1{opacity:1!important}.fslightbox-scrollbarfix{padding-right:17px}.fslightbox-transform-transition{transition:transform .3s}.fslightbox-container{font-family:Arial,sans-serif;position:fixed;top:0;left:0;background:linear-gradient(rgba(30,30,30,.9),#000 1810%);touch-action:pinch-zoom;z-index:1000000000;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}.fslightbox-container *{box-sizing:border-box}.fslightbox-svg-path{transition:fill .15s ease;fill:#ddd}.fslightbox-nav{height:45px;width:100%;position:absolute;top:0;left:0}.fslightbox-slide-number-container{display:flex;justify-content:center;align-items:center;position:relative;height:100%;font-size:15px;color:#d7d7d7;z-index:0;max-width:55px;text-align:left}.fslightbox-slide-number-container .fslightbox-flex-centered{height:100%}.fslightbox-slash{display:block;margin:0 5px;width:1px;height:12px;transform:rotate(15deg);background:#fff}.fslightbox-toolbar{position:absolute;z-index:3;right:0;top:0;height:100%;display:flex;background:rgba(35,35,35,.65)}.fslightbox-toolbar-button{height:100%;width:45px;cursor:pointer}.fslightbox-toolbar-button:hover .fslightbox-svg-path{fill:#fff}.fslightbox-slide-btn-container{display:flex;align-items:center;padding:12px 12px 12px 6px;position:absolute;top:50%;cursor:pointer;z-index:3;transform:translateY(-50%)}@media (min-width:476px){.fslightbox-slide-btn-container{padding:22px 22px 22px 6px}}@media (min-width:768px){.fslightbox-slide-btn-container{padding:30px 30px 30px 6px}}.fslightbox-slide-btn-container:hover .fslightbox-svg-path{fill:#f1f1f1}.fslightbox-slide-btn{padding:9px;font-size:26px;background:rgba(35,35,35,.65)}@media (min-width:768px){.fslightbox-slide-btn{padding:10px}}@media (min-width:1600px){.fslightbox-slide-btn{padding:11px}}.fslightbox-slide-btn-container-previous{left:0}@media (max-width:475.99px){.fslightbox-slide-btn-container-previous{padding-left:3px}}.fslightbox-slide-btn-container-next{right:0;padding-left:12px;padding-right:3px}@media (min-width:476px){.fslightbox-slide-btn-container-next{padding-left:22px}}@media (min-width:768px){.fslightbox-slide-btn-container-next{padding-left:30px}}@media (min-width:476px){.fslightbox-slide-btn-container-next{padding-right:6px}}.fslightbox-down-event-detector{position:absolute;z-index:1}.fslightbox-slide-swiping-hoverer{z-index:4}.fslightbox-invalid-file-wrapper{font-size:22px;color:#eaebeb;margin:auto}.fslightbox-video{object-fit:cover}.fslightbox-youtube-iframe{border:0}.fslightbox-loader{display:block;margin:auto;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:67px;height:67px}.fslightbox-loader div{box-sizing:border-box;display:block;position:absolute;width:54px;height:54px;margin:6px;border:5px solid;border-color:#999 transparent transparent transparent;border-radius:50%;animation:fslightbox-loader 1.2s cubic-bezier(.5,0,.5,1) infinite}.fslightbox-loader div:nth-child(1){animation-delay:-.45s}.fslightbox-loader div:nth-child(2){animation-delay:-.3s}.fslightbox-loader div:nth-child(3){animation-delay:-.15s}@keyframes fslightbox-loader{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.fslightbox-source{position:relative;z-index:2;opacity:0}</style><style type="text/css">.amap-container{cursor:url(https://webapi.amap.com/theme/v1.3/openhand.cur),default;}.amap-drag{cursor:url(https://webapi.amap.com/theme/v1.3/closedhand.cur),default;}</style></head><body :class="darkMode?&#39;dark&#39;:&#39;&#39;" class="line-numbers dark:bg-slate-900 bg-gray-50"><div id="LocalizeScript"><link rel="stylesheet" href="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/he-simple.css"><script src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/he-simple.js.下载"></script><script type="text/javascript">var CuteenConfig = {"theme_version":"5.2(20220512)","index":"https:\/\/blog.zytllt.cn","api":"https:\/\/blog.zytllt.cn\/cuteen\/api","page_size":"6","category_mid":8,"search_words":"null","post_cid":"null","static_cdn_url":"https:\/\/blog.zytllt.cn\/usr\/themes\/Cuteen\/static","is_login":false,"load_article_mode":"ajax","theme_url":"https:\/\/blog.zytllt.cn\/usr\/themes\/Cuteen","TopIndexArray":"[1,2,3,4,5]"};</script></div>    <!--音乐-->
+<!-- require APlayer -->
+<link rel="stylesheet" href="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/APlayer.min.css">
+<script src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/APlayer.min.js.下载"></script>
+<!-- require MetingJS -->
+<script src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/Meting.min.js.下载"></script>
+
+
+<!--博客模仿知乎卡片样式链接-->
+<script src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/kapian.js.下载"></script>
+
+<!--360-->
+<meta name="360-site-verification" content="663529c6ad5ca973e62032e1f90ef147">
+
+<!--运行时间-->
+<script type="text/javascript" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/sitetime.js.下载"></script>
+
+<!--Fn Pro6-->
+<link type="text/css" rel="stylesheet" href="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/fontawesome.min.css" media="all">
+<link href="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/all.min.css" rel="stylesheet">
+<!--Fn 4.7.0-->
+<link type="text/css" rel="stylesheet" href="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/font-awesome.min.css" media="all">
+
+
+<!--一言API-->
+<script src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/saved_resource" defer=""></script>
+
+<!-- 顶部跑马灯特效 -->    
+<div id="top-grrk"></div>
+
+<!--不蒜子计数器-->
+<script async="" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/busuanzi.pure.mini.js.下载"></script>
+
+<!--站点统计-->
+<script defer="" data-domain="blog.zytllt.cn" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/script.js.下载"></script>
+
+<style data-custom-style="">
+    /*评论带图*/
+#comment-textarea {
+    background-image:url(https://cdn.jsdelivr.net/gh/anwen-anyi/imgAnwen/images/OuNiJiang.gif); 
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:right bottom;
+    transition:all 0.25s ease-in-out 0s;
+    }
+    textarea#comment-textarea:focus{
+    background-position-y:120px;
+    transition:all 0.25s ease-in-out 0s;
+} 
+
+/*顶部跑马灯特效*/
+#top-grrk{
+    background:url(https://external-30160.picsz.qpic.cn/e94ff0137dfb6cc51925d4ccf61d2541);
+    height:2px;
+    position:fixed;
+    width:100%;
+    Z-index:10000;
+}
+
+
+/*人生倒计时*/
+.aside-count .content {
+    padding: 15px
+}
+
+.aside-count .content .item {
+    margin-bottom: 15px
+}
+
+.aside-count .content .item:last-child {
+    margin-bottom: 0
+}
+
+.aside-count .content .item .title {
+    font-size: 12px;
+    color: var(--minor);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center
+}
+
+.aside-count .content .item .title span {
+    color: var(--theme);
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0 5px
+}
+
+.aside-count .content .item .progress {
+    display: flex;
+    align-items: center
+}
+
+.aside-count .content .item .progress .progress-bar {
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: var(--classC);
+    width: 0;
+    min-width: 0;
+    flex: 1;
+    margin-right: 5px
+}
+@keyframes progress {
+    0% {
+        background-position: 0 0
+    }
+
+    100% {
+        background-position: 30px 0
+    }
+}
+.aside-count .content .item .progress .progress-bar .progress-inner {
+    width: 0;
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.35s;
+    -webkit-animation: progress 750ms linear infinite;
+    animation: progress 750ms linear infinite
+}
+
+.aside-count .content .item .progress .progress-bar .progress-inner-1 {
+    background: #bde6ff;
+    background-image: linear-gradient(135deg, #50bfff 25%, transparent 25%, transparent 50%, #50bfff 50%, #50bfff 75%, transparent 75%, transparent 100%);
+    background-size: 30px 30px
+}
+
+.aside-count .content .item .progress .progress-bar .progress-inner-2 {
+    background: #ffd980;
+    background-image: linear-gradient(135deg, #f7ba2a 25%, transparent 25%, transparent 50%, #f7ba2a 50%, #f7ba2a 75%, transparent 75%, transparent 100%);
+    background-size: 30px 30px
+}
+
+.aside-count .content .item .progress .progress-bar .progress-inner-3 {
+    background: #ffa9a9;
+    background-image: linear-gradient(135deg, #ff4949 25%, transparent 25%, transparent 50%, #ff4949 50%, #ff4949 75%, transparent 75%, transparent 100%);
+    background-size: 30px 30px
+}
+
+.aside-count .content .item .progress .progress-bar .progress-inner-4 {
+    background: #67c23a;
+    background-image: linear-gradient(135deg, #4f9e28 25%, transparent 25%, transparent 50%, #4f9e28 50%, #4f9e28 75%, transparent 75%, transparent 100%);
+    background-size: 30px 30px
+}
+
+.aside-count .content .item .progress .progress-bar .progress-inner-5 {
+    background: #ead1dc;
+    background-image: linear-gradient(135deg, #d9d2e9 25%, transparent 25%, transparent 50%, #d9d2e9 50%, #d9d2e9 75%, transparent 75%, transparent 100%);
+    background-size: 30px 30px
+}
+
+.aside-count .content .item .progress .progress-percentage {
+    color: var(--info)
+}
+
+
+
+
+
+/*头像呼吸光环和鼠标悬停旋转放大*/
+.friends-img.mr-2.lazy.loaded:hover{
+transform:rotate(360deg);
+}
+ 
+.comment-avatar:hover{
+transform:rotate(360deg);
+}
+ 
+.sidebar-comment-avatar.mr-1:hover{
+transform:rotate(360deg);
+}
+ 
+.friends-img.mr-2.lazy.loaded,.comment-avatar,.sidebar-comment-avatar.mr-1 {
+    border-radius: 50%;
+    animation: light 4s ease-in-out infinite;
+    transition: all 0.5s;
+}
+ 
+@keyframes light {
+    0% {
+        box-shadow: 0 0 4px #ff1354;
+    }
+ 
+    25% {
+    box-shadow: 0 0 16px #1ebbff;
+    }
+ 
+    50% {
+    box-shadow: 0 0 4px #0ed39f;
+    }
+ 
+    75% {
+    box-shadow: 0 0 16px #4fe7f4;
+    }
+ 
+    100% {
+    box-shadow: 0 0 4px #f35444;
+    }
+}
+
+/*文章边框、评论框、侧边栏圆角及阴影化*/
+.post-ctx,.post-comment.mt-4,.sidebar-box {
+    background-clip: border-box;
+    /*border-radius: 15px;*/
+    box-shadow: -2px 8px 17px 0 rgb(157 167 255 / 36%), 0 6px 20px 0 rgb(255 255 255 / 19%);
+}
+ 
+.sidebar-banner{
+    border-radius: 20px 20px 0px 0px;
+}
+
+
+/*个人信息*/
+.sidebar-box-two{
+min-height:unset;
+}
+.social{
+display: flex;
+    justify-content: space-around;
+}
+.social img {
+   width: 40px;
+   height: auto;
+   margin: 20px 0;
+   border-radius: 50px;
+}
+.texiao:hover{
+transform: scale(1.2);
+transition: all .5s;
+}
+
+
+#yiyan {
+width:300px;
+height:50px;
+text-align:center;
+/*border:2px solid gray;*/
+line-height:50px;
+}
+
+/*去掉浏览A标签时A标签变成边框动画*/
+.typography a:not([data-fslightbox]):not(.btn):hover {
+    background: none;
+}
+
+/*简单修复A标签高度问题*/
+a.cf-article-title {
+    color: #49b1f5!important;
+    font-weight: bold!important;
+    font-family: 'HarmonyOS'!important;
+    margin-bottom:15px!important;
+    vertical-align: bottom!important;
+}
+
+
+
+
+
+            a[data-fslightbox] {
+        width: 100%;
+    }
+
+    a[data-fslightbox] img {
+        margin: 0 auto;
+    }
+
+        
+    </style>
+<!--移动端Navbar-->
+<nav :class="{ &#39;-translate-x-full&#39; : !$store.mobileNavbarOpen }" class="dark:bg-gray-800 fixed z-[999] transition duration-300 transform top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white overflow-y-auto -translate-x-full">
+    <div class="flex items-center mb-5">
+        <a class="mr-auto flex items-end text-gray-400 leading-none">
+                            <img class="h-12 rounded" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/TouXiang.png" alt="avatar">
+                        <span class="text-base ml-1.5 font-bold"> An_wen</span>
+        </a>
+        <button @click="$store.mobileNavbarOpen = !$store.mobileNavbarOpen">
+            <svg class="h-5 w-5 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+        <div class="mt-4">
+        <a class="block mb-1 p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded menu-item" href="https://blog.zytllt.cn/yu.html">语录</a><a class="block mb-1 p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded menu-item" href="https://blog.zytllt.cn/ly.html">留言板</a><a class="block mb-1 p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded menu-item" href="https://blog.zytllt.cn/ss.html">说说</a><a class="block mb-1 p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded menu-item" href="https://blog.zytllt.cn/pyq.html">友人圈</a><a class="block mb-1 p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded menu-item" href="https://blog.zytllt.cn/cloud.html">云盘</a><div x-data="{open : false}" @click.away="open = false"><div @click="open = !open" class="flex items-center font-semibold justify-between px-4 py-3 transition cursor-pointer group text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded menu-item"><div class="flex items-center"><span class="text-sm">日常分享写作</span></div><svg :class="{ &#39;rotate-90&#39;: open }" class="shrink-0 w-4 h-4 ml-2 transition transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentcolor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414.0z" clip-rule="evenodd"></path></svg></div><div x-show="open" class="mb-4" style="display: none;"> <a class="menu-item flex items-center py-2 pl-12 pr-4 transition cursor-pointer text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded select-none bg-blue-50 text-blue-600 active" href="https://blog.zytllt.cn/category/richang/">日常生活☀</a> <a class="menu-item flex items-center py-2 pl-12 pr-4 transition cursor-pointer text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded select-none" href="https://blog.zytllt.cn/category/cat/">我的小猫🐈</a> <a class="menu-item flex items-center py-2 pl-12 pr-4 transition cursor-pointer text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded select-none" href="https://blog.zytllt.cn/category/Internet/">网络工厂💻</a> <a class="menu-item flex items-center py-2 pl-12 pr-4 transition cursor-pointer text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded select-none" href="https://blog.zytllt.cn/category/%E5%85%A8%E7%90%83%E8%BF%91%E4%BA%8B/">全球近事🌏</a> <a class="menu-item flex items-center py-2 pl-12 pr-4 transition cursor-pointer text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded select-none" href="https://blog.zytllt.cn/category/ali/">阿里资源☁️</a></div></div>    </div>
+</nav>
+<div @click="$store.mobileNavbarOpen = !$store.mobileNavbarOpen" x-show="$store.mobileNavbarOpen" class="fixed inset-0 z-40 flex items-end bg-gray-800 bg-opacity-25" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="bg-transparent" x-transition:enter-end="bg-gray-800" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="bg-gray-800" x-transition:leave-end="bg-transparent" style="display: none;">
+</div>
+
+<!--搜索框-->
+
+<div x-show="$store.isSearch" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" style="display: none;">
+    <!-- Modal -->
+    <div x-show="$store.isSearch" class="bg-white dark:bg-slate-900 rounded-xl shadow-2xl p-6 w-[35rem] z-[90]" @click.away="$store.isSearch = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1" style="display: none;">
+        <span class="dark:text-zinc-300 font-bold block text-2xl mb-3">搜 索</span>
+        <form id="search" class="search-form" method="post" role="search" action="https://blog.zytllt.cn/">
+            <div class="form-control">
+                <div class="flex space-x-2">
+                    <input value="" type="text" name="s" maxlength="16" autocomplete="off" placeholder="输入您要搜索的内容..." class="w-full input input-primary input-bordered">
+                    <input type="submit" value="点击搜索" class="btn btn-primary">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<header id="nav_pc" class="md:px-8 px-6 text-sm min-h-12 h-12 fixed top-0 z-40 w-full backdrop-blur supports-backdrop-blur:bg-white/95 md:border-b md:border-gray-900/10 text-white">
+    <div class="flex items-center relative justify-between h-full">
+        <button type="button" @click="$store.mobileNavbarOpen = !$store.mobileNavbarOpen" class="dark:focus:ring-gray-700 p-1 m-1 rounded block md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 stroke-current" fill="none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+        <a class="md:mr-3 navbar-logo flex items-center flex-shrink-0 min-h-12 py-1" href="https://blog.zytllt.cn/">
+                            <img x-show="darkMode" class="dark:text-white w-auto h-9" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/t-anwen.png" alt="Anwen&#39;s Blog - 安稳博客!" style="display: none;">
+                <img x-show="!darkMode" class="dark:text-white w-auto h-9" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/t-anwen.png" alt="Anwen&#39;s Blog - 安稳博客!">
+                    </a>
+
+        <div class="navbar-menu flex justify-between md:w-full">
+            <div class="md:flex hidden">
+                <a class="navbar-item py-2 px-3 cursor-pointer" href="https://blog.zytllt.cn/yu.html">语录</a><a class="navbar-item py-2 px-3 cursor-pointer" href="https://blog.zytllt.cn/ly.html">留言板</a><a class="navbar-item py-2 px-3 cursor-pointer" href="https://blog.zytllt.cn/ss.html">说说</a><a class="navbar-item py-2 px-3 cursor-pointer" href="https://blog.zytllt.cn/pyq.html">友人圈</a><a class="navbar-item py-2 px-3 cursor-pointer" href="https://blog.zytllt.cn/cloud.html">云盘</a><div class="navbar-item-dropdown py-2 px-3 cursor-pointer relative"><a class="navbar-link inline-flex items-center">日常分享写作<svg class="w-4 h-4 ml-1 transition-transform duration-200 transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a><div class="navbar-dropdown transition-all opacity-0 invisible flex p-3 gap-3 flex-col text-black absolute bg-white rounded left-0 min-w-full top-full z-20"> <a class="navbar-item px-4 whitespace-nowrap cursor-pointer bg-blue-50 text-blue-600 active" href="https://blog.zytllt.cn/category/richang/">日常生活☀</a> <a class="navbar-item px-4 whitespace-nowrap cursor-pointer" href="https://blog.zytllt.cn/category/cat/">我的小猫🐈</a> <a class="navbar-item px-4 whitespace-nowrap cursor-pointer" href="https://blog.zytllt.cn/category/Internet/">网络工厂💻</a> <a class="navbar-item px-4 whitespace-nowrap cursor-pointer" href="https://blog.zytllt.cn/category/%E5%85%A8%E7%90%83%E8%BF%91%E4%BA%8B/">全球近事🌏</a> <a class="navbar-item px-4 whitespace-nowrap cursor-pointer" href="https://blog.zytllt.cn/category/ali/">阿里资源☁️</a></div></div>            </div>
+            <div class="flex">
+				<!--天气-->
+				<div data-v-41ba7e2c="" id="he-plugin-simple" style="position: relative;"><script data-v-41ba7e2c="" type="text/javascript" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/maps"></script> <div data-v-41ba7e2c="" class="s-sticker" style="font-size: 1.4em; cursor: pointer; padding: 10px; background-color: transparent;"><div data-v-41ba7e2c="" style="width: 0px;"></div> <div data-v-7d48daab="" data-v-41ba7e2c="" class="s-sticker-tmp module" style="font-size: 16px; color: rgb(64, 158, 255); vertical-align: top;">32°C</div><div data-v-7d48daab="" data-v-41ba7e2c="" class="s-sticker-city module" style="font-size: 16px; color: rgb(64, 158, 255); vertical-align: top;">汕头</div><div data-v-7d48daab="" data-v-41ba7e2c="" class="s-sticker-cond module" style="vertical-align: top;"><img data-v-7d48daab="" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/101d.png" style="width: 24px; height: 24px;"></div><div data-v-7d48daab="" data-v-41ba7e2c="" class="module" style="vertical-align: top;"></div><div data-v-7d48daab="" data-v-41ba7e2c="" class="s-sticker-qlty module" style="color: rgb(64, 158, 255); font-size: 16px; vertical-align: top;">优</div> <div data-v-41ba7e2c="" style="width: 100%;"></div></div> <div data-v-41ba7e2c=""><!----></div></div>
+                <button type="button" @click="$store.isSearch = !$store.isSearch" class="dark:focus:ring-gray-700 p-1 m-1 rounded">
+                    <svg viewBox="0 0 24 24" class="h-5 w-5 stroke-current stroke-2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+
+                <button type="button" @click="darkMode = !darkMode" class="dark:focus:ring-gray-700 p-1 m-1 rounded hidden md:block">
+                    <svg viewBox="0 0 24 24" class="dark:hidden h-5 w-5 stroke-current stroke-2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg viewBox="0 0 24 24" class="w-5 h-5 hidden dark:block text-sky-500 stroke-current stroke-2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                            </div>
+        </div>
+    </div>
+</header>
+
+<main id="wrap">
+
+
+
+<div data-id="style-text-article-list">
+    
+<div data-id="hero" class="text-white relative dark:text-zinc-300 text-2xl flex flex-col items-center justify-center" style="background-image: url(&#39;https://tvax1.sinaimg.cn/large/0084aYsLly1ge7bcjv1u1j31hc0u00y8.jpg&#39;);height : 900px;">
+                        <h3 data-id="post-title" class="relative text-2xl md:text-4xl mx-4 text-center"> 日常生活☀ •
+                共20篇</h3>
+                <section class="main-hero-waves-area waves-area">
+    <svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+            <path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path>
+        </defs>
+        <g class="parallax">
+            <use xlink:href="#gentle-wave" x="48" y="0"></use>
+            <use xlink:href="#gentle-wave" x="48" y="3"></use>
+            <use xlink:href="#gentle-wave" x="48" y="5"></use>
+            <use xlink:href="#gentle-wave" x="48" y="7"></use>
+        </g>
+    </svg>
+</section>
+</div>
+    <div class="md:pt-7 flex justify-center lg:gap-5 flex-row-reverse">
+        <section class="mt-6">
+            <div class="hidden dark:text-zinc-300 lg:block w-60 h-full" data-id="sidebar-style-text">
+    <section class="bg-white dark:bg-black dark:bg-opacity-20 rounded border border-gray-900/10 relative mb-4">
+                    <div data-id="sidebar-background" class="top-0 left-0 h-32 relative bg-cover w-full bg-center" style="background-image: url(&#39;https://anwen.oss-cn-beijing.aliyuncs.com/blog/blogimg/2112991221.jpg&#39;)"></div>
+                <div class="relative h-12">
+                            <img class="rounded-full w-16 h-16 left-2/4 -translate-y-1/2 mx-auto border-4 border-gray-100" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/TouXiang.png" alt="avatar">
+                    </div>
+        <!--<h2 class="font-bold text-xl text-center mb-4">An_wen</h2>-->
+		<div style="text-align: center;">
+			<span style="font-weight:bold;font-size:22px;"><rainbow-text>An_wen</rainbow-text></span>
+			<br>
+		</div>
+        		<p style="text-align:center;font-weight:bold;font-size:14px;"><rainbow-text style="font-size: 12px;">三生三世安安稳稳,婷婷玉立花落花开.</rainbow-text></p><br>
+        <div class="border-t border-gray-900/10">
+            <table class="text-center w-full my-2">
+                <tbody><tr class="text-sm">
+                    <th><i class="fab fa-leanpub" style="color:#409EFF;font-size: 1em;" aria-hidden="true"></i>文章</th>
+                    <th><i class="fa fa-comments" style="color:#409EFF;font-size: 1em;" aria-hidden="true"></i>评论</th>
+                    <th><i class="fa fa-tags" style="color:#409EFF;font-size: 1em;" aria-hidden="true"></i>标签</th>
+                </tr>
+                <tr>
+                    <td>68</td>
+                    <td>14</td>
+                    <td>123</td>
+                </tr>
+            </tbody></table>
+        </div>
+			<div class="social border-t border-gray-900/10" style="line-height: 40px;font-weight: bold;">
+				<a href="https://space.bilibili.com/36411485/" rel="nofollow" target="_blank" class="texiao">
+					<i class="fa-duotone fa-atom fa-spin mr-1" style="color: rgb(255,0,0);" aria-hidden="true"></i>
+				</a>
+
+				<a href="https://gitee.com/" rel="nofollow" target="_blank" class="texiao">
+					<i class="fa-duotone fa-atom fa-spin mr-1" style="color: rgb(255,125,0);" aria-hidden="true"></i>
+				</a>
+
+				<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=993280891&amp;site=qq&amp;menu=yes" rel="nofollow" target="_blank" class="texiao">
+					<i class="fa-duotone fa-atom fa-spin mr-1" style="color: rgb(255,255,0);" aria-hidden="true"></i>
+				</a>
+
+				<a href="https://chat.zytllt.cn/room/@blog" rel="nofollow" target="_blank" class="texiao">
+					<i class="fa-duotone fa-atom fa-spin mr-1" style="color: rgb(0,255,0);" aria-hidden="true"></i>
+				</a>
+				
+				<a href="https://monitor.safe-education.repl.co/status/my" rel="nofollow" target="_blank" class="texiao">
+					<i class="fa-duotone fa-atom fa-spin mr-1" style="color: rgb(0,0,255);" aria-hidden="true"></i>
+				</a>
+				
+				<a href="https://site.icodeq.com/blog.zytllt.cn" rel="nofollow" target="_blank" class="texiao">
+					<i class="fa-duotone fa-atom fa-spin mr-1" style="color: rgb(0,255,255);" aria-hidden="true"></i>
+				</a>
+				
+				<a href="https://blog.zytllt.cn/category/richang/#" rel="nofollow" target="_blank" class="texiao">
+					<i class="fa-duotone fa-atom fa-spin mr-1" style="color: rgb(255,0,255);" aria-hidden="true"></i>
+				</a>
+				
+			</div>	
+    </section>
+
+	
+	<section class="bg-white dark:bg-black dark:bg-opacity-20 rounded border border-gray-900/10 relative mb-4">
+	<!--人生倒计时-->
+		<div class="sidebar-box classListBox">
+			<div class="aside aside-count">
+				<div class="p-3"><i class="fa fa-hourglass-half fa-spin mr-1" style="color: orange;font-size: 1.2em;" aria-hidden="true"></i>人生倒计时</div>
+				<div class="content">
+					<div class="item" id="dayProgress">
+						<div class="title">今日已经过去<span>12</span>小时</div>
+						<div class="progress">
+							<div class="progress-bar">
+								<div class="progress-inner progress-inner-1" style="width: 50%;"></div>
+							</div>
+							<div class="progress-percentage">50%</div>
+						</div>
+					</div>
+					<div class="item" id="weekProgress">
+						<div class="title">这周已经过去<span>7</span>天</div>
+						<div class="progress">
+							<div class="progress-bar">
+								<div class="progress-inner progress-inner-2" style="width: 100%;"></div>
+							</div>
+							<div class="progress-percentage">100%</div>
+						</div>
+					</div>
+					<div class="item" id="monthProgress">
+						<div class="title">本月已经过去<span>10</span>天</div>
+						<div class="progress">
+							<div class="progress-bar">
+								<div class="progress-inner progress-inner-3" style="width: 32%;"></div>
+							</div>
+							<div class="progress-percentage">32%</div>
+						</div>
+					</div>
+					<div class="item" id="yearProgress">
+						<div class="title">今年已经过去<span>7</span>个月</div>
+						<div class="progress">
+							<div class="progress-bar">
+								<div class="progress-inner progress-inner-4" style="width: 58%;"></div>
+							</div>
+							<div class="progress-percentage">58%</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!--日历-->
+	<section class="bg-white dark:bg-black dark:bg-opacity-20 rounded border border-gray-900/10 relative mb-4">
+		<div class="sidebar-box classListBox">
+							<div class="list-group">
+					<div class="p-3"><i class="fa-duotone fa-calendar-day mr-1" style="color:rgb(255, 0, 255);font-size: 1.2em;" aria-hidden="true"></i>日历</div>
+					        <div id="cal_switcher" class="list-group-item clearfix">
+        	<a href="javascript:move(&#39;left&#39;)"><i class="fa fa-angle-left"></i></a>
+            <div id="cal_yearmonth">
+	            <span id="cal_year"><b>2022</b>年</span>
+	            <span id="cal_month"><b>7</b>月</span>
+            </div>
+            <a href="javascript:move(&#39;right&#39;)"><i class="fa fa-angle-right"></i></a>
+        </div><table id="cal_plugin" class="table table-bordered"><tbody><tr class="cal-header"><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th></tr><tr class="cal-body"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>1</td><td class=" weekend">2</td><td class=" weekend">3</td></tr><tr class="cal-body"><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td class=" weekend">9</td><td class=" weekend current">10</td></tr><tr class="cal-body"><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td class=" weekend">16</td><td class=" weekend">17</td></tr><tr class="cal-body"><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td class=" weekend">23</td><td class=" weekend">24</td></tr><tr class="cal-body"><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td class=" weekend">30</td><td class=" weekend">31</td></tr></tbody></table>
+				</div>
+					</div>
+	</section>
+	
+	<!--聊天室-->
+	<section class="bg-white dark:bg-black dark:bg-opacity-20 rounded border border-gray-900/10 relative mb-4">
+		<div class="sidebar-box classListBox">
+			<div class="aside aside-count">
+				<div class="p-3"><i class="fa-duotone fa-atom fa-spin mr-1" style="color: #1048e6;font-size: 1.2em;" aria-hidden="true"></i>聊天室</div>
+				<a href="https://chat.zytllt.cn/room/@blog" rel="nofollow" target="_blank" class="texiao">
+							<img src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/svg"></a>
+			</div>
+		</div>
+	</section>
+
+	
+    <section data-id="sidebar-recent-comment" class="bg-white dark:bg-black dark:bg-opacity-20 card card-bordered rounded border border-gray-900/10 relative mb-4">
+        <div class="mx-4 py-2 my-2 flex items-center border-b border-gray-900/10">
+            <svg class="w-5 h-5 mr-1" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3201" width="200" height="200"><path d="M427.886 109.714h168.228c185.82 0 336.458 151.14 336.458 337.582S781.934 784.88 596.114 784.88v147.692C385.828 848.176 91.428 721.58 91.428 447.296c0-186.44 150.638-337.58 336.458-337.58z" fill="#FE544A" p-id="3202"></path><path d="M649.578 503.508c23.28-23.096 32.372-56.76 23.852-88.312-8.522-31.552-33.362-56.196-65.164-64.65-31.804-8.454-65.736 0.566-89.016 23.664L512 381.4l-7.25-7.192c-23.28-23.098-57.212-32.12-89.016-23.664-31.8 8.454-56.64 33.1-65.164 64.65-8.52 31.55 0.572 65.216 23.852 88.312l111.82 110.94c14.26 14.144 37.258 14.144 51.516 0l111.82-110.94z" fill="#FFFFFF" p-id="3203"></path></svg>
+            <span>最新回复</span>
+        </div>
+        <!--原始数据是5'ignoreAuthor=false&pageSize=3'-->
+        <div class="my-3">
+                            <div class="transition relative card compact side bg-base-100 dark:bg-transparent">
+                    <div class="px-3 my-2">
+                        <div class="flex justify-between mb-2">
+                            <div class="text-sm flex items-center">
+                                <img class="w-6 h-6 mr-2 rounded-full" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/g" &s="100&quot;" alt="17981417">
+                                17981417                            </div>
+                            <time class="text-xs flex items-center">
+                                 2022 年 05 月 12 日                            </time>
+                        </div>
+                        <a href="https://blog.zytllt.cn/email#comment-112" class="p-3 block text-xs text-gray-500 bg-gray-50 rounded border border-gray-200 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-300">
+                            <div class="line-clamp-2">
+                                <img class="emoji h-8 w-auto inline-block mx-1" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/E8B59EE4B880E4B8AA_2x.png">                            </div>
+                        </a>
+                    </div>
+                </div>
+                            <div class="transition relative card compact side bg-base-100 dark:bg-transparent">
+                    <div class="px-3 my-2">
+                        <div class="flex justify-between mb-2">
+                            <div class="text-sm flex items-center">
+                                <img class="w-6 h-6 mr-2 rounded-full" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/g(1)" &s="100&quot;" alt="Andy烧麦">
+                                Andy烧麦                            </div>
+                            <time class="text-xs flex items-center">
+                                 2022 年 05 月 08 日                            </time>
+                        </div>
+                        <a href="https://blog.zytllt.cn/235#comment-110" class="p-3 block text-xs text-gray-500 bg-gray-50 rounded border border-gray-200 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-300">
+                            <div class="line-clamp-2">
+                                启用IPV6之后，链接NAS快多了                            </div>
+                        </a>
+                    </div>
+                </div>
+                            <div class="transition relative card compact side bg-base-100 dark:bg-transparent">
+                    <div class="px-3 my-2">
+                        <div class="flex justify-between mb-2">
+                            <div class="text-sm flex items-center">
+                                <img class="w-6 h-6 mr-2 rounded-full" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/g(2)" &s="100&quot;" alt="叶小明的博客">
+                                叶小明的博客                            </div>
+                            <time class="text-xs flex items-center">
+                                 2022 年 05 月 07 日                            </time>
+                        </div>
+                        <a href="https://blog.zytllt.cn/ly.html#comment-107" class="p-3 block text-xs text-gray-500 bg-gray-50 rounded border border-gray-200 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-300">
+                            <div class="line-clamp-2">
+                                来观摩学习下<img class="emoji h-8 w-auto inline-block mx-1" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/E78CAEE88AB1_2x.png">                            </div>
+                        </a>
+                    </div>
+                </div>
+                    </div>
+    </section>
+    <section class="bg-white dark:bg-black dark:bg-opacity-20 card card-bordered rounded border border-gray-900/10 relative sticky top-16">
+        <div class="mx-4 py-2 my-2 flex items-center border-b border-gray-900/10">
+            <svg class="w-5 h-5 mr-1" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3358" width="200" height="200"><path d="M172.032 168.532L512 93.092l339.968 75.44c18.926 4.2 32.396 20.962 32.396 40.324v412.612c0 82.88-41.49 160.274-110.55 206.244L512 930.91l-261.814-103.198c-69.048-45.962-110.53-123.338-110.55-206.202V208.856c0-19.36 13.47-36.122 32.396-40.324z" fill="#06D387" p-id="3359"></path><path d="M512 279.272c102.828 0 186.18 83.354 186.18 186.182 0 102.828-83.352 186.182-186.18 186.182s-186.18-83.354-186.18-186.18c0-102.83 83.352-186.184 186.18-186.184z m0 93.092a93.28 93.28 0 0 0-27.424 4.096 46.546 46.546 0 1 1-61.552 61.57c-11.842 38.414 2.31 80.09 35.096 103.35 32.786 23.26 76.8 22.846 109.142-1.024 32.344-23.87 45.712-65.806 33.15-103.99-12.56-38.186-48.214-63.996-88.412-64.002z" fill="#FFFFFF" p-id="3360"></path></svg>
+            <span>随便看看</span>
+        </div>
+        <!--原始数据是3'pageSize=2'-->
+                    <div class="px-3 pb-3">
+                <div class="sidebar-rand-item h-28 relative flex flex-col overflow-hidden rounded">
+                    <a class="sidebar-rand-img absolute inset-0 object-cover bg-center bg-cover" href="https://blog.zytllt.cn/236" style="background-image: url(https://anwen.oss-cn-beijing.aliyuncs.com/blog/blogimg/Google1.png);">
+                    </a>
+                    <div class="sidebar-rand-info p-2 z-10 absolute w-full bottom-0 inset-x-0 text-white text-xs" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));">
+                        <a href="https://blog.zytllt.cn/236">
+                            <div class="sidebar-rand-date"> 2022 年 05 月 06 日</div>
+                            <div class="sidebar-rand-title line-clamp-1">更安全的登录方式！苹果、谷歌、微软三巨头支持无密码技术</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+                    <div class="px-3 pb-3">
+                <div class="sidebar-rand-item h-28 relative flex flex-col overflow-hidden rounded">
+                    <a class="sidebar-rand-img absolute inset-0 object-cover bg-center bg-cover" href="https://blog.zytllt.cn/108" style="background-image: url(https://blog.zytllt.cn/usr/uploads/2021/05/1047303533.png);">
+                    </a>
+                    <div class="sidebar-rand-info p-2 z-10 absolute w-full bottom-0 inset-x-0 text-white text-xs" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));">
+                        <a href="https://blog.zytllt.cn/108">
+                            <div class="sidebar-rand-date"> 2021 年 05 月 05 日</div>
+                            <div class="sidebar-rand-title line-clamp-1">颜色表</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </section>
+</div>
+
+         </section>
+        <div class="md:min-w-[768px]">
+                            <section id="article-list" data-id="article" class="max-w-screen-md container bg-transparent">
+                                            <article class="article relative border md:border-0 h-40 md:h-[14.5rem] rounded overflow-hidden bg-white md:bg-black md:mb-8 flex mx-4 mt-6 md:mx-0"><div class="blur-img z-0"><img class="md:scale-125 absolute h-[14.5rem] object-cover bg-center bg-cover inset-0 w-full md:blur-[1.875rem] brightness-75" alt="添加注册表,打开绿色版视频播放器(potplayer)" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/th"></div><a class="md:block hidden article-img z-10 w-4/12 m-0 border-0" href="https://blog.zytllt.cn/242"><img class="w-full h-full ease-out duration-300 object-cover bg-center bg-cover" alt="添加注册表,打开绿色版视频播放器(potplayer)" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/th"></a><div class="article-ctx text-white z-10 w-full md:w-8/12 flex justify-between flex-col px-4 py-5 md:py-12 md:px-8"><div class="article-info text-xs flex justify-between"><div class="article-time flex items-center"><svg class="w-4 h-4 mr-1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M1024 512c0 282.7776-229.2224 512-512 512S0 794.7776 0 512 229.2224 0 512 0s512 229.2224 512 512z" fill="#2962FF"></path><path d="M640 294.4v-12.8a25.6 25.6 0 1 0-51.2 0v12.8H435.2v-12.8a25.6 25.6 0 1 0-51.2 0v12.8h-89.5872a38.4 38.4 0 0 0-38.4 38.4v66.56h512V332.8a38.4 38.4 0 0 0-38.4-38.4H640zM256 435.2v303.616A41.8944 41.8944 0 0 0 297.728 780.8h428.5312a41.8816 41.8816 0 0 0 41.7152-41.984V435.2H256z m134.4 102.4h243.2a19.2 19.2 0 0 1 0 38.4h-243.2a19.2 19.2 0 0 1 0-38.4z m0 89.6h243.2a19.2 19.2 0 0 1 0 38.4h-243.2a19.2 19.2 0 0 1 0-38.4z" fill="#FFFFFF"></path></svg>2022年05月27日</div><div class="article-vs  flex items-center"><span class="article-views flex items-center"><svg class="w-4 h-4 mr-1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M1024 512c0 282.7776-229.2224 512-512 512S0 794.7776 0 512 229.2224 0 512 0s512 229.2224 512 512z" fill="#FF0808"></path><path d="M408.576 448.192v-0.448a419.328 419.328 0 0 0-0.1792-6.9248v0.2816l-0.0128-1.088a76.6208 76.6208 0 0 1-0.0384-2.24 122.752 122.752 0 0 1 0.32-7.7184l-0.128 1.7152 0.192-2.688c1.1776-13.9904 4.992-31.3344 10.7904-49.2288 9.5872-27.5456 26.112-57.2672 52.2752-79.1808C506.8672 271.296 557.312 256 607.6544 256c5.7344 0 11.0208 2.8544 13.888 7.488 2.8672 4.6336 2.88 10.3424 0.0256 14.976-1.9712 3.2768-86.2208 81.7536 11.5584 137.344C671.9104 437.8624 729.6 495.68 729.6 564.608c0 54.016-22.6304 104.9856-63.7312 143.5008C624.6784 746.7264 570.0224 768 512 768c-57.792 0-112.4608-21.5808-153.9072-60.7488a206.6304 206.6304 0 0 1-46.5536-64.6912A186.9312 186.9312 0 0 1 294.4 564.608c0-52.3264 26.2912-110.3488 62.8992-119.4112l0.1792 10.9568c0.0896 3.4432 0.256 6.784 0.4864 10.1504l0.576 6.8096c0.3328 3.4432 0.768 6.976 1.28 10.7136l1.152 7.7824 1.408 8.4992 0.8064 4.5952 1.8176 9.9584c1.6384 8.832 4.1984 18.8544 7.68 30.1824a25.6 25.6 0 0 0 48.9472-15.0272 227.8912 227.8912 0 0 1-6.2976-24.512l-2.3424-13.0304-1.2544-7.5136-1.024-6.784a286.528 286.528 0 0 1-0.4352-3.1744l-0.6912-6.016-0.512-5.6832a181.6832 181.6832 0 0 1-0.1536-2.3936l-0.2176-4.9664-0.128-6.6176v-0.9344z" fill="#FFFFFF"></path></svg>208<div class="readText mr-1">阅读</div></span><a href="https://blog.zytllt.cn/category/richang/" class="article-sort flex items-center"><svg class="w-4 h-4 mr-1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M1024 512c0 282.7776-229.2224 512-512 512S0 794.7776 0 512 229.2224 0 512 0s512 229.2224 512 512z" fill="#00C853"></path><path d="M543.6928 291.584c-0.1664-0.1152 53.3888 56.5888 109.312 115.7888l7.6416 8.0896 117.2096 124.0704a53.76 53.76 0 0 1 2.0864 73.8176l-2.0864 2.2144h0.0128L589.9264 803.456a53.8624 53.8624 0 0 1-76.1088 0L272.3328 555.008A38.2848 38.2848 0 0 1 256 523.648l0.192-201.344a40.7168 40.7168 0 0 1 39.7824-40.448l215.7184 0.128a39.9488 39.9488 0 0 1 32 9.6z m108.4672 259.456a25.6 25.6 0 0 0-36.2112 0l-90.496 90.5088a25.6 25.6 0 0 0 36.1984 36.2112l90.496-90.5088a25.6 25.6 0 0 0 0-36.2112zM384 358.4a38.4 38.4 0 1 0 0 76.8 38.4 38.4 0 0 0 0-76.8z" fill="#FFFFFF"></path></svg>日常生活☀</a></div></div><a class="article-title my-font-serif tracking-wider md:text-2xl text-lg line-clamp-1 font-bold" href="https://blog.zytllt.cn/242">添加注册表,打开绿色版视频播放器(potplayer)</a><a class="article-description break-all indent-8 text-xs md:text-base leading-6 md:leading-[1.8rem] line-clamp-2" href="https://blog.zytllt.cn/242">给绿色版potplayer添加进注册表,让其他地方唤醒的时候可以使用</a></div></article>                                            <article class="article flex-row-reverse  relative border md:border-0 h-40 md:h-[14.5rem] rounded overflow-hidden bg-white md:bg-black md:mb-8 flex mx-4 mt-6 md:mx-0"><div class="blur-img z-0"><img class="md:scale-125 absolute h-[14.5rem] object-cover bg-center bg-cover inset-0 w-full md:blur-[1.875rem] brightness-75" alt="bing壁纸自动更新" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/saved_resource(1)"></div><a class="md:block hidden article-img z-10 w-4/12 m-0 border-0" href="https://blog.zytllt.cn/239"><img class="w-full h-full ease-out duration-300 object-cover bg-center bg-cover" alt="bing壁纸自动更新" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/saved_resource(1)"></a><div class="article-ctx text-white z-10 w-full md:w-8/12 flex justify-between flex-col px-4 py-5 md:py-12 md:px-8"><div class="article-info text-xs flex justify-between"><div class="article-time flex items-center"><svg class="w-4 h-4 mr-1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M1024 512c0 282.7776-229.2224 512-512 512S0 794.7776 0 512 229.2224 0 512 0s512 229.2224 512 512z" fill="#2962FF"></path><path d="M640 294.4v-12.8a25.6 25.6 0 1 0-51.2 0v12.8H435.2v-12.8a25.6 25.6 0 1 0-51.2 0v12.8h-89.5872a38.4 38.4 0 0 0-38.4 38.4v66.56h512V332.8a38.4 38.4 0 0 0-38.4-38.4H640zM256 435.2v303.616A41.8944 41.8944 0 0 0 297.728 780.8h428.5312a41.8816 41.8816 0 0 0 41.7152-41.984V435.2H256z m134.4 102.4h243.2a19.2 19.2 0 0 1 0 38.4h-243.2a19.2 19.2 0 0 1 0-38.4z m0 89.6h243.2a19.2 19.2 0 0 1 0 38.4h-243.2a19.2 19.2 0 0 1 0-38.4z" fill="#FFFFFF"></path></svg>2022年05月09日</div><div class="article-vs  flex items-center"><span class="article-views flex items-center"><svg class="w-4 h-4 mr-1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M1024 512c0 282.7776-229.2224 512-512 512S0 794.7776 0 512 229.2224 0 512 0s512 229.2224 512 512z" fill="#FF0808"></path><path d="M408.576 448.192v-0.448a419.328 419.328 0 0 0-0.1792-6.9248v0.2816l-0.0128-1.088a76.6208 76.6208 0 0 1-0.0384-2.24 122.752 122.752 0 0 1 0.32-7.7184l-0.128 1.7152 0.192-2.688c1.1776-13.9904 4.992-31.3344 10.7904-49.2288 9.5872-27.5456 26.112-57.2672 52.2752-79.1808C506.8672 271.296 557.312 256 607.6544 256c5.7344 0 11.0208 2.8544 13.888 7.488 2.8672 4.6336 2.88 10.3424 0.0256 14.976-1.9712 3.2768-86.2208 81.7536 11.5584 137.344C671.9104 437.8624 729.6 495.68 729.6 564.608c0 54.016-22.6304 104.9856-63.7312 143.5008C624.6784 746.7264 570.0224 768 512 768c-57.792 0-112.4608-21.5808-153.9072-60.7488a206.6304 206.6304 0 0 1-46.5536-64.6912A186.9312 186.9312 0 0 1 294.4 564.608c0-52.3264 26.2912-110.3488 62.8992-119.4112l0.1792 10.9568c0.0896 3.4432 0.256 6.784 0.4864 10.1504l0.576 6.8096c0.3328 3.4432 0.768 6.976 1.28 10.7136l1.152 7.7824 1.408 8.4992 0.8064 4.5952 1.8176 9.9584c1.6384 8.832 4.1984 18.8544 7.68 30.1824a25.6 25.6 0 0 0 48.9472-15.0272 227.8912 227.8912 0 0 1-6.2976-24.512l-2.3424-13.0304-1.2544-7.5136-1.024-6.784a286.528 286.528 0 0 1-0.4352-3.1744l-0.6912-6.016-0.512-5.6832a181.6832 181.6832 0 0 1-0.1536-2.3936l-0.2176-4.9664-0.128-6.6176v-0.9344z" fill="#FFFFFF"></path></svg>445<div class="readText mr-1">阅读</div></span><a href="https://blog.zytllt.cn/category/richang/" class="article-sort flex items-center"><svg class="w-4 h-4 mr-1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M1024 512c0 282.7776-229.2224 512-512 512S0 794.7776 0 512 229.2224 0 512 0s512 229.2224 512 512z" fill="#00C853"></path><path d="M543.6928 291.584c-0.1664-0.1152 53.3888 56.5888 109.312 115.7888l7.6416 8.0896 117.2096 124.0704a53.76 53.76 0 0 1 2.0864 73.8176l-2.0864 2.2144h0.0128L589.9264 803.456a53.8624 53.8624 0 0 1-76.1088 0L272.3328 555.008A38.2848 38.2848 0 0 1 256 523.648l0.192-201.344a40.7168 40.7168 0 0 1 39.7824-40.448l215.7184 0.128a39.9488 39.9488 0 0 1 32 9.6z m108.4672 259.456a25.6 25.6 0 0 0-36.2112 0l-90.496 90.5088a25.6 25.6 0 0 0 36.1984 36.2112l90.496-90.5088a25.6 25.6 0 0 0 0-36.2112zM384 358.4a38.4 38.4 0 1 0 0 76.8 38.4 38.4 0 0 0 0-76.8z" fill="#FFFFFF"></path></svg>日常生活☀</a></div></div><a class="article-title my-font-serif tracking-wider md:text-2xl text-lg line-clamp-1 font-bold" href="https://blog.zytllt.cn/239">bing壁纸自动更新</a><a class="article-description break-all indent-8 text-xs md:text-base leading-6 md:leading-[1.8rem] line-clamp-2" href="https://blog.zytllt.cn/239">bing壁纸自动更新,每天10点30更新如果未更新,11点二次更新.</a></div></article>                                            <article class="article relative border md:border-0 h-40 md:h-[14.5rem] rounded overflow-hidden bg-white md:bg-black md:mb-8 flex mx-4 mt-6 md:mx-0"><div class="blur-img z-0"><img class="md:scale-125 absolute h-[14.5rem] object-cover bg-center bg-cover inset-0 w-full md:blur-[1.875rem] brightness-75" alt="河北联通&quot;ZXHN F677V2&quot;光猫超级密码及开启IPV6" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/4C17FE60A8153FEC0EA2E7826BFAFCE3.png"></div><a class="md:block hidden article-img z-10 w-4/12 m-0 border-0" href="https://blog.zytllt.cn/235"><img class="w-full h-full ease-out duration-300 object-cover bg-center bg-cover" alt="河北联通&quot;ZXHN F677V2&quot;光猫超级密码及开启IPV6" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/4C17FE60A8153FEC0EA2E7826BFAFCE3.png"></a><div class="article-ctx text-white z-10 w-full md:w-8/12 flex justify-between flex-col px-4 py-5 md:py-12 md:px-8"><div class="article-info text-xs flex justify-between"><div class="article-time flex items-center"><svg class="w-4 h-4 mr-1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M1024 512c0 282.7776-229.2224 512-512 512S0 794.7776 0 512 229.2224 0 512 0s512 229.2224 512 512z" fill="#2962FF"></path><path d="M640 294.4v-12.8a25.6 25.6 0 1 0-51.2 0v12.8H435.2v-12.8a25.6 25.6 0 1 0-51.2 0v12.8h-89.5872a38.4 38.4 0 0 0-38.4 38.4v66.56h512V332.8a38.4 38.4 0 0 0-38.4-38.4H640zM256 435.2v303.616A41.8944 41.8944 0 0 0 297.728 780.8h428.5312a41.8816 41.8816 0 0 0 41.7152-41.984V435.2H256z m134.4 102.4h243.2a19.2 19.2 0 0 1 0 38.4h-243.2a19.2 19.2 0 0 1 0-38.4z m0 89.6h243.2a19.2 19.2 0 0 1 0 38.4h-243.2a19.2 19.2 0 0 1 0-38.4z" fill="#FFFFFF"></path></svg>2022年04月27日</div><div class="article-vs  flex items-center"><span class="article-views flex items-center"><svg class="w-4 h-4 mr-1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M1024 512c0 282.7776-229.2224 512-512 512S0 794.7776 0 512 229.2224 0 512 0s512 229.2224 512 512z" fill="#FF0808"></path><path d="M408.576 448.192v-0.448a419.328 419.328 0 0 0-0.1792-6.9248v0.2816l-0.0128-1.088a76.6208 76.6208 0 0 1-0.0384-2.24 122.752 122.752 0 0 1 0.32-7.7184l-0.128 1.7152 0.192-2.688c1.1776-13.9904 4.992-31.3344 10.7904-49.2288 9.5872-27.5456 26.112-57.2672 52.2752-79.1808C506.8672 271.296 557.312 256 607.6544 256c5.7344 0 11.0208 2.8544 13.888 7.488 2.8672 4.6336 2.88 10.3424 0.0256 14.976-1.9712 3.2768-86.2208 81.7536 11.5584 137.344C671.9104 437.8624 729.6 495.68 729.6 564.608c0 54.016-22.6304 104.9856-63.7312 143.5008C624.6784 746.7264 570.0224 768 512 768c-57.792 0-112.4608-21.5808-153.9072-60.7488a206.6304 206.6304 0 0 1-46.5536-64.6912A186.9312 186.9312 0 0 1 294.4 564.608c0-52.3264 26.2912-110.3488 62.8992-119.4112l0.1792 10.9568c0.0896 3.4432 0.256 6.784 0.4864 10.1504l0.576 6.8096c0.3328 3.4432 0.768 6.976 1.28 10.7136l1.152 7.7824 1.408 8.4992 0.8064 4.5952 1.8176 9.9584c1.6384 8.832 4.1984 18.8544 7.68 30.1824a25.6 25.6 0 0 0 48.9472-15.0272 227.8912 227.8912 0 0 1-6.2976-24.512l-2.3424-13.0304-1.2544-7.5136-1.024-6.784a286.528 286.528 0 0 1-0.4352-3.1744l-0.6912-6.016-0.512-5.6832a181.6832 181.6832 0 0 1-0.1536-2.3936l-0.2176-4.9664-0.128-6.6176v-0.9344z" fill="#FFFFFF"></path></svg>1.3k<div class="readText mr-1">阅读</div></span><a href="https://blog.zytllt.cn/category/richang/" class="article-sort flex items-center"><svg class="w-4 h-4 mr-1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M1024 512c0 282.7776-229.2224 512-512 512S0 794.7776 0 512 229.2224 0 512 0s512 229.2224 512 512z" fill="#00C853"></path><path d="M543.6928 291.584c-0.1664-0.1152 53.3888 56.5888 109.312 115.7888l7.6416 8.0896 117.2096 124.0704a53.76 53.76 0 0 1 2.0864 73.8176l-2.0864 2.2144h0.0128L589.9264 803.456a53.8624 53.8624 0 0 1-76.1088 0L272.3328 555.008A38.2848 38.2848 0 0 1 256 523.648l0.192-201.344a40.7168 40.7168 0 0 1 39.7824-40.448l215.7184 0.128a39.9488 39.9488 0 0 1 32 9.6z m108.4672 259.456a25.6 25.6 0 0 0-36.2112 0l-90.496 90.5088a25.6 25.6 0 0 0 36.1984 36.2112l90.496-90.5088a25.6 25.6 0 0 0 0-36.2112zM384 358.4a38.4 38.4 0 1 0 0 76.8 38.4 38.4 0 0 0 0-76.8z" fill="#FFFFFF"></path></svg>日常生活☀</a></div></div><a class="article-title my-font-serif tracking-wider md:text-2xl text-lg line-clamp-1 font-bold" href="https://blog.zytllt.cn/235">河北联通"ZXHN F677V2"光猫超级密码及开启IPV6</a><a class="article-description break-all indent-8 text-xs md:text-base leading-6 md:leading-[1.8rem] line-clamp-2" href="https://blog.zytllt.cn/235">河北联通"ZXHN F677V2"型号光猫的超级密码及开启IPV6网络协议</a></div></article>                                            <article class="article flex-row-reverse  relative border md:border-0 h-40 md:h-[14.5rem] rounded overflow-hidden bg-white md:bg-black md:mb-8 flex mx-4 mt-6 md:mx-0"><div class="blur-img z-0"><img class="md:scale-125 absolute h-[14.5rem] object-cover bg-center bg-cover inset-0 w-full md:blur-[1.875rem] brightness-75" alt="&quot;Replit&quot;运行使用的项目" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/ReplitDemo.png"></div><a class="md:block hidden article-img z-10 w-4/12 m-0 border-0" href="https://blog.zytllt.cn/234"><img class="w-full h-full ease-out duration-300 object-cover bg-center bg-cover" alt="&quot;Replit&quot;运行使用的项目" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/ReplitDemo.png"></a><div class="article-ctx text-white z-10 w-full md:w-8/12 flex justify-between flex-col px-4 py-5 md:py-12 md:px-8"><div class="article-info text-xs flex justify-between"><div class="article-time flex items-center"><svg class="w-4 h-4 mr-1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M1024 512c0 282.7776-229.2224 512-512 512S0 794.7776 0 512 229.2224 0 512 0s512 229.2224 512 512z" fill="#2962FF"></path><path d="M640 294.4v-12.8a25.6 25.6 0 1 0-51.2 0v12.8H435.2v-12.8a25.6 25.6 0 1 0-51.2 0v12.8h-89.5872a38.4 38.4 0 0 0-38.4 38.4v66.56h512V332.8a38.4 38.4 0 0 0-38.4-38.4H640zM256 435.2v303.616A41.8944 41.8944 0 0 0 297.728 780.8h428.5312a41.8816 41.8816 0 0 0 41.7152-41.984V435.2H256z m134.4 102.4h243.2a19.2 19.2 0 0 1 0 38.4h-243.2a19.2 19.2 0 0 1 0-38.4z m0 89.6h243.2a19.2 19.2 0 0 1 0 38.4h-243.2a19.2 19.2 0 0 1 0-38.4z" fill="#FFFFFF"></path></svg>2022年04月24日</div><div class="article-vs  flex items-center"><span class="article-views flex items-center"><svg class="w-4 h-4 mr-1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M1024 512c0 282.7776-229.2224 512-512 512S0 794.7776 0 512 229.2224 0 512 0s512 229.2224 512 512z" fill="#FF0808"></path><path d="M408.576 448.192v-0.448a419.328 419.328 0 0 0-0.1792-6.9248v0.2816l-0.0128-1.088a76.6208 76.6208 0 0 1-0.0384-2.24 122.752 122.752 0 0 1 0.32-7.7184l-0.128 1.7152 0.192-2.688c1.1776-13.9904 4.992-31.3344 10.7904-49.2288 9.5872-27.5456 26.112-57.2672 52.2752-79.1808C506.8672 271.296 557.312 256 607.6544 256c5.7344 0 11.0208 2.8544 13.888 7.488 2.8672 4.6336 2.88 10.3424 0.0256 14.976-1.9712 3.2768-86.2208 81.7536 11.5584 137.344C671.9104 437.8624 729.6 495.68 729.6 564.608c0 54.016-22.6304 104.9856-63.7312 143.5008C624.6784 746.7264 570.0224 768 512 768c-57.792 0-112.4608-21.5808-153.9072-60.7488a206.6304 206.6304 0 0 1-46.5536-64.6912A186.9312 186.9312 0 0 1 294.4 564.608c0-52.3264 26.2912-110.3488 62.8992-119.4112l0.1792 10.9568c0.0896 3.4432 0.256 6.784 0.4864 10.1504l0.576 6.8096c0.3328 3.4432 0.768 6.976 1.28 10.7136l1.152 7.7824 1.408 8.4992 0.8064 4.5952 1.8176 9.9584c1.6384 8.832 4.1984 18.8544 7.68 30.1824a25.6 25.6 0 0 0 48.9472-15.0272 227.8912 227.8912 0 0 1-6.2976-24.512l-2.3424-13.0304-1.2544-7.5136-1.024-6.784a286.528 286.528 0 0 1-0.4352-3.1744l-0.6912-6.016-0.512-5.6832a181.6832 181.6832 0 0 1-0.1536-2.3936l-0.2176-4.9664-0.128-6.6176v-0.9344z" fill="#FFFFFF"></path></svg>434<div class="readText mr-1">阅读</div></span><a href="https://blog.zytllt.cn/category/richang/" class="article-sort flex items-center"><svg class="w-4 h-4 mr-1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M1024 512c0 282.7776-229.2224 512-512 512S0 794.7776 0 512 229.2224 0 512 0s512 229.2224 512 512z" fill="#00C853"></path><path d="M543.6928 291.584c-0.1664-0.1152 53.3888 56.5888 109.312 115.7888l7.6416 8.0896 117.2096 124.0704a53.76 53.76 0 0 1 2.0864 73.8176l-2.0864 2.2144h0.0128L589.9264 803.456a53.8624 53.8624 0 0 1-76.1088 0L272.3328 555.008A38.2848 38.2848 0 0 1 256 523.648l0.192-201.344a40.7168 40.7168 0 0 1 39.7824-40.448l215.7184 0.128a39.9488 39.9488 0 0 1 32 9.6z m108.4672 259.456a25.6 25.6 0 0 0-36.2112 0l-90.496 90.5088a25.6 25.6 0 0 0 36.1984 36.2112l90.496-90.5088a25.6 25.6 0 0 0 0-36.2112zM384 358.4a38.4 38.4 0 1 0 0 76.8 38.4 38.4 0 0 0 0-76.8z" fill="#FFFFFF"></path></svg>日常生活☀</a></div></div><a class="article-title my-font-serif tracking-wider md:text-2xl text-lg line-clamp-1 font-bold" href="https://blog.zytllt.cn/234">"Replit"运行使用的项目</a><a class="article-description break-all indent-8 text-xs md:text-base leading-6 md:leading-[1.8rem] line-clamp-2" href="https://blog.zytllt.cn/234">自己在"Replit"运行使用的项目展示</a></div></article>                                            <article class="article relative border md:border-0 h-40 md:h-[14.5rem] rounded overflow-hidden bg-white md:bg-black md:mb-8 flex mx-4 mt-6 md:mx-0"><div class="blur-img z-0"><img class="md:scale-125 absolute h-[14.5rem] object-cover bg-center bg-cover inset-0 w-full md:blur-[1.875rem] brightness-75" alt="Uptime Kuma 监控自己的网站" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/monitor.png"></div><a class="md:block hidden article-img z-10 w-4/12 m-0 border-0" href="https://blog.zytllt.cn/233"><img class="w-full h-full ease-out duration-300 object-cover bg-center bg-cover" alt="Uptime Kuma 监控自己的网站" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/monitor.png"></a><div class="article-ctx text-white z-10 w-full md:w-8/12 flex justify-between flex-col px-4 py-5 md:py-12 md:px-8"><div class="article-info text-xs flex justify-between"><div class="article-time flex items-center"><svg class="w-4 h-4 mr-1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M1024 512c0 282.7776-229.2224 512-512 512S0 794.7776 0 512 229.2224 0 512 0s512 229.2224 512 512z" fill="#2962FF"></path><path d="M640 294.4v-12.8a25.6 25.6 0 1 0-51.2 0v12.8H435.2v-12.8a25.6 25.6 0 1 0-51.2 0v12.8h-89.5872a38.4 38.4 0 0 0-38.4 38.4v66.56h512V332.8a38.4 38.4 0 0 0-38.4-38.4H640zM256 435.2v303.616A41.8944 41.8944 0 0 0 297.728 780.8h428.5312a41.8816 41.8816 0 0 0 41.7152-41.984V435.2H256z m134.4 102.4h243.2a19.2 19.2 0 0 1 0 38.4h-243.2a19.2 19.2 0 0 1 0-38.4z m0 89.6h243.2a19.2 19.2 0 0 1 0 38.4h-243.2a19.2 19.2 0 0 1 0-38.4z" fill="#FFFFFF"></path></svg>2022年04月24日</div><div class="article-vs  flex items-center"><span class="article-views flex items-center"><svg class="w-4 h-4 mr-1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M1024 512c0 282.7776-229.2224 512-512 512S0 794.7776 0 512 229.2224 0 512 0s512 229.2224 512 512z" fill="#FF0808"></path><path d="M408.576 448.192v-0.448a419.328 419.328 0 0 0-0.1792-6.9248v0.2816l-0.0128-1.088a76.6208 76.6208 0 0 1-0.0384-2.24 122.752 122.752 0 0 1 0.32-7.7184l-0.128 1.7152 0.192-2.688c1.1776-13.9904 4.992-31.3344 10.7904-49.2288 9.5872-27.5456 26.112-57.2672 52.2752-79.1808C506.8672 271.296 557.312 256 607.6544 256c5.7344 0 11.0208 2.8544 13.888 7.488 2.8672 4.6336 2.88 10.3424 0.0256 14.976-1.9712 3.2768-86.2208 81.7536 11.5584 137.344C671.9104 437.8624 729.6 495.68 729.6 564.608c0 54.016-22.6304 104.9856-63.7312 143.5008C624.6784 746.7264 570.0224 768 512 768c-57.792 0-112.4608-21.5808-153.9072-60.7488a206.6304 206.6304 0 0 1-46.5536-64.6912A186.9312 186.9312 0 0 1 294.4 564.608c0-52.3264 26.2912-110.3488 62.8992-119.4112l0.1792 10.9568c0.0896 3.4432 0.256 6.784 0.4864 10.1504l0.576 6.8096c0.3328 3.4432 0.768 6.976 1.28 10.7136l1.152 7.7824 1.408 8.4992 0.8064 4.5952 1.8176 9.9584c1.6384 8.832 4.1984 18.8544 7.68 30.1824a25.6 25.6 0 0 0 48.9472-15.0272 227.8912 227.8912 0 0 1-6.2976-24.512l-2.3424-13.0304-1.2544-7.5136-1.024-6.784a286.528 286.528 0 0 1-0.4352-3.1744l-0.6912-6.016-0.512-5.6832a181.6832 181.6832 0 0 1-0.1536-2.3936l-0.2176-4.9664-0.128-6.6176v-0.9344z" fill="#FFFFFF"></path></svg>387<div class="readText mr-1">阅读</div></span><a href="https://blog.zytllt.cn/category/richang/" class="article-sort flex items-center"><svg class="w-4 h-4 mr-1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M1024 512c0 282.7776-229.2224 512-512 512S0 794.7776 0 512 229.2224 0 512 0s512 229.2224 512 512z" fill="#00C853"></path><path d="M543.6928 291.584c-0.1664-0.1152 53.3888 56.5888 109.312 115.7888l7.6416 8.0896 117.2096 124.0704a53.76 53.76 0 0 1 2.0864 73.8176l-2.0864 2.2144h0.0128L589.9264 803.456a53.8624 53.8624 0 0 1-76.1088 0L272.3328 555.008A38.2848 38.2848 0 0 1 256 523.648l0.192-201.344a40.7168 40.7168 0 0 1 39.7824-40.448l215.7184 0.128a39.9488 39.9488 0 0 1 32 9.6z m108.4672 259.456a25.6 25.6 0 0 0-36.2112 0l-90.496 90.5088a25.6 25.6 0 0 0 36.1984 36.2112l90.496-90.5088a25.6 25.6 0 0 0 0-36.2112zM384 358.4a38.4 38.4 0 1 0 0 76.8 38.4 38.4 0 0 0 0-76.8z" fill="#FFFFFF"></path></svg>日常生活☀</a></div></div><a class="article-title my-font-serif tracking-wider md:text-2xl text-lg line-clamp-1 font-bold" href="https://blog.zytllt.cn/233">Uptime Kuma 监控自己的网站</a><a class="article-description break-all indent-8 text-xs md:text-base leading-6 md:leading-[1.8rem] line-clamp-2" href="https://blog.zytllt.cn/233">使用`Uptime Kuma`监控监控监控,并且保持`Replit`一直不会休眠.</a></div></article>                                            <article class="article flex-row-reverse  relative border md:border-0 h-40 md:h-[14.5rem] rounded overflow-hidden bg-white md:bg-black md:mb-8 flex mx-4 mt-6 md:mx-0"><div class="blur-img z-0"><img class="md:scale-125 absolute h-[14.5rem] object-cover bg-center bg-cover inset-0 w-full md:blur-[1.875rem] brightness-75" alt="IDEA安装了不能启动 --- 疑似安装多版本的原因" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/Release_Preview_image_1280x600_IntelliJIDEA-2x.png"></div><a class="md:block hidden article-img z-10 w-4/12 m-0 border-0" href="https://blog.zytllt.cn/230"><img class="w-full h-full ease-out duration-300 object-cover bg-center bg-cover" alt="IDEA安装了不能启动 --- 疑似安装多版本的原因" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/Release_Preview_image_1280x600_IntelliJIDEA-2x.png"></a><div class="article-ctx text-white z-10 w-full md:w-8/12 flex justify-between flex-col px-4 py-5 md:py-12 md:px-8"><div class="article-info text-xs flex justify-between"><div class="article-time flex items-center"><svg class="w-4 h-4 mr-1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M1024 512c0 282.7776-229.2224 512-512 512S0 794.7776 0 512 229.2224 0 512 0s512 229.2224 512 512z" fill="#2962FF"></path><path d="M640 294.4v-12.8a25.6 25.6 0 1 0-51.2 0v12.8H435.2v-12.8a25.6 25.6 0 1 0-51.2 0v12.8h-89.5872a38.4 38.4 0 0 0-38.4 38.4v66.56h512V332.8a38.4 38.4 0 0 0-38.4-38.4H640zM256 435.2v303.616A41.8944 41.8944 0 0 0 297.728 780.8h428.5312a41.8816 41.8816 0 0 0 41.7152-41.984V435.2H256z m134.4 102.4h243.2a19.2 19.2 0 0 1 0 38.4h-243.2a19.2 19.2 0 0 1 0-38.4z m0 89.6h243.2a19.2 19.2 0 0 1 0 38.4h-243.2a19.2 19.2 0 0 1 0-38.4z" fill="#FFFFFF"></path></svg>2022年04月18日</div><div class="article-vs  flex items-center"><span class="article-views flex items-center"><svg class="w-4 h-4 mr-1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M1024 512c0 282.7776-229.2224 512-512 512S0 794.7776 0 512 229.2224 0 512 0s512 229.2224 512 512z" fill="#FF0808"></path><path d="M408.576 448.192v-0.448a419.328 419.328 0 0 0-0.1792-6.9248v0.2816l-0.0128-1.088a76.6208 76.6208 0 0 1-0.0384-2.24 122.752 122.752 0 0 1 0.32-7.7184l-0.128 1.7152 0.192-2.688c1.1776-13.9904 4.992-31.3344 10.7904-49.2288 9.5872-27.5456 26.112-57.2672 52.2752-79.1808C506.8672 271.296 557.312 256 607.6544 256c5.7344 0 11.0208 2.8544 13.888 7.488 2.8672 4.6336 2.88 10.3424 0.0256 14.976-1.9712 3.2768-86.2208 81.7536 11.5584 137.344C671.9104 437.8624 729.6 495.68 729.6 564.608c0 54.016-22.6304 104.9856-63.7312 143.5008C624.6784 746.7264 570.0224 768 512 768c-57.792 0-112.4608-21.5808-153.9072-60.7488a206.6304 206.6304 0 0 1-46.5536-64.6912A186.9312 186.9312 0 0 1 294.4 564.608c0-52.3264 26.2912-110.3488 62.8992-119.4112l0.1792 10.9568c0.0896 3.4432 0.256 6.784 0.4864 10.1504l0.576 6.8096c0.3328 3.4432 0.768 6.976 1.28 10.7136l1.152 7.7824 1.408 8.4992 0.8064 4.5952 1.8176 9.9584c1.6384 8.832 4.1984 18.8544 7.68 30.1824a25.6 25.6 0 0 0 48.9472-15.0272 227.8912 227.8912 0 0 1-6.2976-24.512l-2.3424-13.0304-1.2544-7.5136-1.024-6.784a286.528 286.528 0 0 1-0.4352-3.1744l-0.6912-6.016-0.512-5.6832a181.6832 181.6832 0 0 1-0.1536-2.3936l-0.2176-4.9664-0.128-6.6176v-0.9344z" fill="#FFFFFF"></path></svg>151<div class="readText mr-1">阅读</div></span><a href="https://blog.zytllt.cn/category/richang/" class="article-sort flex items-center"><svg class="w-4 h-4 mr-1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M1024 512c0 282.7776-229.2224 512-512 512S0 794.7776 0 512 229.2224 0 512 0s512 229.2224 512 512z" fill="#00C853"></path><path d="M543.6928 291.584c-0.1664-0.1152 53.3888 56.5888 109.312 115.7888l7.6416 8.0896 117.2096 124.0704a53.76 53.76 0 0 1 2.0864 73.8176l-2.0864 2.2144h0.0128L589.9264 803.456a53.8624 53.8624 0 0 1-76.1088 0L272.3328 555.008A38.2848 38.2848 0 0 1 256 523.648l0.192-201.344a40.7168 40.7168 0 0 1 39.7824-40.448l215.7184 0.128a39.9488 39.9488 0 0 1 32 9.6z m108.4672 259.456a25.6 25.6 0 0 0-36.2112 0l-90.496 90.5088a25.6 25.6 0 0 0 36.1984 36.2112l90.496-90.5088a25.6 25.6 0 0 0 0-36.2112zM384 358.4a38.4 38.4 0 1 0 0 76.8 38.4 38.4 0 0 0 0-76.8z" fill="#FFFFFF"></path></svg>日常生活☀</a></div></div><a class="article-title my-font-serif tracking-wider md:text-2xl text-lg line-clamp-1 font-bold" href="https://blog.zytllt.cn/230">IDEA安装了不能启动 --- 疑似安装多版本的原因</a><a class="article-description break-all indent-8 text-xs md:text-base leading-6 md:leading-[1.8rem] line-clamp-2" href="https://blog.zytllt.cn/230">修复IDEA安装后无法启动...</a></div></article>                                    </section>
+                    <a class="next" title="" href="https://blog.zytllt.cn/category/richang/2/"><button x-show="!$store.ajaxArticleFinish" data-id="next-btn" @click="AjaxLoadArticle" class="h-12 flex mx-auto items-center justify-center dark:text-zinc-300 dark:border-gray-300/10 dark:bg-black dark:bg-opacity-20 w-2/6 text-gray-700 border-gray-900/10 border-2 hover:border-blue-600 dark:border-gray-300/10 mt-6 focus:ring-2 focus:ring-blue-700 ring-offset-2 dark:ring-offset-gray-800 cursor-pointer font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+            <template x-for="i in 3"></template><span x-show="$store.ajaxArticleLoading" class="animate-ping mx-2 h-3 w-3 bg-blue-600 rounded-full block" style="display: none;"></span><span x-show="$store.ajaxArticleLoading" class="animate-ping mx-2 h-3 w-3 bg-blue-600 rounded-full block" style="display: none;"></span><span x-show="$store.ajaxArticleLoading" class="animate-ping mx-2 h-3 w-3 bg-blue-600 rounded-full block" style="display: none;"></span>
+            <span class="tracking-widest" x-show="!$store.ajaxArticleLoading">加载更多</span>
+        </button></a>    <button x-show="$store.ajaxArticleFinish" class="h-12 flex mx-auto items-center justify-center dark:text-zinc-300 w-2/6 text-gray-700 mt-6 font-medium text-sm px-5 py-2.5 text-center" style="display: none;">
+        <span class="tracking-widest">已经到底啦~</span>
+    </button>
+                    </div>
+    </div>
+</div>
+
+</main>
+
+<footer class="mt-10 text-gray-700 bg-white border-t border-gray-900/10 dark:border-gray-300/10 dark:bg-transparent">
+    <div class="container flex flex-col items-center px-8 py-8 mx-auto max-w-7xl md:flex-row">
+		<div style="text-align: center;">
+			<a href="https://blog.zytllt.cn/" class="text-xl font-black leading-none text-gray-900 select-none logo">
+				Anwen's Blog - 安稳博客!				<!--<span class="text-indigo-600">.</span>-->
+				<br>
+				<p class="logo" style="font-weight: bold;font-size: 10px;text-align: center;">总访问量 <span id="busuanzi_value_site_pv" style="color: rgb(3, 109, 252);">70432</span> 次 | 总访客数 <span id="busuanzi_value_site_uv" style="color: rgb(3, 109, 252);">34067</span> 人</p>
+			</a>
+			
+		</div>
+
+		
+        <p class="mt-4 text-center md:text-left text-sm text-gray-500 md:ml-4 md:pl-4 md:border-l md:border-gray-200 md:mt-0">
+		<!--源码-->
+		<!--
+            © 2022  Anwen's Blog - 安稳博客! -
+            Anwen's 安稳博客，一个记录有趣分享、点滴生活身边的所见所闻.<br>
+            Powered by Typecho ※ Theme is Cuteen
+			-->
+			<!--一言-->
+			<span>
+                <span style="color: rgb(13, 109, 252);font-size: 10px;font-weight: bold;" id="hitokoto">侯非侯，王非王，千乘万骑走北芒。</span> 
+            </span>
+			<br>
+			<!--运行时间-->
+			<span style="color:blue;font-size: 10px;font-weight:bold;">小站已运行:
+				<!--js已加到头部-->
+					<span style="color:red;" id="sitetime">2 年 252 天 12 小时 2 分钟 9 秒</span>
+			</span>
+			<br>
+			<!--展示-->
+			<span style="font-size: 13px; font-weight: bold;">
+				<span class="nav-item">
+                    <a class="nav-link logo" href="http://wpa.qq.com/msgrd?v=3&amp;uin=993280891&amp;site=qq&amp;menu=yes" target="_blank">
+                        <i class="fab fa-qq" style="color:#409EFF" aria-hidden="true">
+                        </i>
+                        QQ |
+                    </a>
+                </span>
+                <span class="nav-item">
+                    <a class="nav-link logo" href="mailto:anwen_anyi@foxmail.com" target="_blank">
+                        <i class="fa-duotone fa-envelope-open" style="color:#409EFF" aria-hidden="true">
+                        </i>
+                        邮箱 |
+                    </a>
+                </span>
+				<!--
+                <span class="nav-item">
+                    <a class="nav-link logo" href="/sitemap.xml" target="_blank">
+                        <i class="fa-solid fa-map-location-dot" style="color:#409EFF" aria-hidden="true">
+                        </i>
+                        地图 |
+                    </a>
+                </span>
+				-->
+                <span class="nav-item">
+                    <a class="nav-link logo" href="https://www.zytllt.cn/ly" target="_blank">
+                        <i class="fas fa-comment-lines" style="color:#409EFF;" aria-hidden="true">
+                        </i>
+                        留言 |
+                    </a>
+                </span>
+                <span class="nav-item">
+                    <a class="nav-link logo" href="https://cloud.zytllt.cn/" target="_blank">
+                        <i class="fa fa-cloud-download" style="color:#409EFF;" aria-hidden="true">
+                        </i>
+                        云盘 |
+                    </a>
+                </span>
+                <span class="nav-item">
+                    <a class="nav-link logo" href="https://monitor.safe-education.repl.co/status/my" target="_blank">
+                        <i class="fa-solid fa-circle-info" style="color:#409EFF;" aria-hidden="true">
+                        </i>
+                        监控
+                    </a>
+                </span>
+			</span>
+        </p>
+		
+        <div class="mt-4 md:ml-auto md:mt-0 flex flex-col items-center md:items-end">
+                            <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" class="text-gray-400 hover:text-gray-500 text-sm flex items-center mb-1">
+                    <svg class="h-6 w-6 mr-0.5" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M97.9 389.3c7.1 4.2 13.1 10.1 19.8 15.1 9.5 7.1 19.1 14 28.4 20.9 14.3-31.5 27.9-61.6 42.2-92.9-22.1-3.9-44.7-8.2-67.5-11.5-3-0.4-8.2 3.7-9.9 7-6.9 13.3-12.8 27-19 40.6-3.9 8.6-3.1 15.4 6 20.8zM214.7 291.8c26.4-22.8 51.7-44.6 77.9-67.3-18.8-13-37.8-26.5-57.4-39.2-2.6-1.7-9.4-0.5-12.2 1.8-13.1 10.7-25.8 22.1-38.1 33.8-2.1 2-3.2 7.3-2 9.8 10.2 20.4 21 40.5 31.8 61.1zM339.4 201.9c28.9-8.4 57.8-16.9 86.8-25.1 7.4-2.1 6.4-5.5 3.4-10.6-10-17.1-19.3-34.6-30-51.2-2.2-3.5-9.5-6.6-13.5-5.7-15.6 3.5-30.9 8.4-46.1 13.4-2.8 0.9-6.3 5.1-6.4 7.8-0.5 23.4-0.3 46.9-0.3 70.4 4.7 0.8 5.5 1.2 6.1 1zM136.1 475.5c-2.9-0.6-4.1-1.2-5.1-0.9-19.5 5-39 9.9-58.3 15.7-2.9 0.9-6.1 6.6-6.2 10.1-0.3 17.3 0 34.6 1.2 51.8 0.3 3.6 4.7 9 8.1 9.9 19.7 5.2 39.8 9.3 60.2 13.9V475.5zM586 174.6c-1-13.8-1.3-27.7-3.6-41.2-5-30 2.5-25.5-28.9-30.8-3.7-0.6-7.4-1.3-11.1-1.9-26.4-4-26.6-4-37.4 20-7.3 16.2-13.7 32.7-20.4 48.7 34.3 4.9 67.2 9.5 101.5 14.4-0.1-2.8 0.1-6.1-0.1-9.2zM741.9 194c0.8-2.4-1.9-7.3-4.4-9.1-13.4-9.8-27-19.3-41-28-3-1.8-9.6-1.8-12.1 0.3-18 15.4-35.3 31.5-52.6 47.1 29.2 19.9 56.9 38.9 85.6 58.5 8.3-22.7 16.8-45.6 24.5-68.8zM504.2 862.8c8.1 17.4 16.2 35.5 25.2 53 1.5 2.9 7.5 5.6 10.9 5.1 17.9-2.9 35.8-6.3 53.4-10.8 3.6-0.9 7.8-7 8.3-11.2 1.6-12.6 1.7-25.4 2.2-38.2 0.2-6.5 0-13 0-19.2-34.2 7.3-66.3 14.1-100 21.3zM749.5 798.9c-5.6-13.5-11.2-27-16.7-40.3-28.6 21.9-55.7 42.7-83.5 64 16.4 13.7 31.6 26.9 47.6 39.2 2.6 2 9.6 1.3 12.9-0.8 11-6.8 21.4-14.6 31.7-22.4 18.1-13.5 18-13.6 9.6-34.3-0.7-1.6-0.9-3.6-1.6-5.4zM541.3 749.2c-56.9-1.8-109.9-17.9-154.9-53-71.7-56-97.9-132.6-85.1-220.5 11.1-76.7 57-132.3 125.6-165.9 55-27 114.2-32.2 172.7-9.9 45.6 17.4 70.5 53.1 52.4 106.5-11.5 33.8-35.6 57.5-64.7 76.4-34.2 22.3-70.8 37.5-112.7 34.6-40.8-2.9-59.4-33.1-43.8-71 3-7.3 7.4-14 11.2-20.9-21.1 19.5-38.3 42-44 71.3-4.7 24.7 9.3 50 32.2 58.7 21.9 8.4 44.6 11.5 67.8 8.7 75.2-9.1 140.2-40 194.6-92.8 60.1-58.3 58.9-152.2-4.2-204.7-55-45.7-118.8-71.6-190.8-73.4-81.4-2.1-156.2 18.5-220.7 70.2-64 51.5-104.5 117.8-118.6 198.8-9.9 56.8-4.6 112.8 15.9 167.3 26 69.1 68 125 130.9 164.3 87.2 54.5 180.7 64.9 278.2 36.3 87-25.5 147.3-84.3 190.9-162.1 1.4-2.5 1.8-5.6 2.7-8.4-13.2 9.1-23.9 19.9-35.9 28.8-59.3 43.8-126.4 63-199.7 60.7zM447.1 859.9c-14.5-1.7-29-4-43.2-7.2-15.2-3.4-30.1-8.2-47.3-12.9 0 21.4-0.2 41.1 0.3 60.8 0.1 2.6 3.5 6.8 6.2 7.5 18.1 4.8 36.3 9.1 54.6 12.7 3 0.6 8.5-1.6 10-4.2 9-15.1 17.1-30.6 25.5-46 3.6-6.7 2.2-9.7-6.1-10.7zM200.2 809.6c-1.1 2.5 0.7 7.9 2.9 9.8 14.3 12.2 29.1 24 44 35.5 2.3 1.8 7.3 3 9.1 1.7 17.3-12.4 34.1-25.3 51-38-27.5-22.3-53.4-43.3-81.2-65.8-8.7 18.9-17.6 37.7-25.8 56.8zM100.6 665.3c-2.1 1.9-2.8 8-1.5 10.8 7.6 16.1 15.8 32 24.5 47.6 1.6 2.9 6.6 6.3 9.4 5.8 20.7-3.7 41.3-8.3 61.1-12.4L148 625.2c-15.9 13.3-31.9 26.4-47.4 40.1z" fill="#ED4201"></path>
+                        <path d="M928.2 349.2c-14.5-33.7-43.7-48.8-75.4-58.7-19.9-6.2-40.6-8.9-61.5-9.5-10.3-0.3-20.6-0.2-31 0.3-9.2 0.4-18.6 1.4-27.9 3.7 5 1.2 40.3 11 55.7 19 1.1 0.6 2.1 1.1 3.2 1.7 20.3 11.5 32.8 28.9 33.6 53.7 1 31.8-13.1 57.9-31.7 82-0.6 0.8-1.3 1.6-1.9 2.3-18.5 23.4-40.5 43.1-64.6 60.7-46.3 33.7-97.2 57.9-152.2 72.4-41.7 11-84.2 14.2-127.1 5-45.3-9.7-76.5-49.4-58.1-98 3.1-8.2 6.2-16.5 9.3-24.7-15.3 19.6-26.8 40.2-29.6 65.5-3.6 33.5 10.4 58.6 35.8 77.3 31.7 23.4 69.7 29.2 107.7 30.5 24.6 0.8 49.5-3.4 74.1-5.9 42.8-4.4 83.5-17 123-33.1 28.2-11.5 55.7-24.5 81.7-40 16.6-9.9 32.5-20.8 47.7-33.1 34-27.7 66.3-57.2 84.1-98.6 10.1-23.4 16-47.2 5.1-72.5z" fill="#035DB6"></path>
+                    </svg>
+                    <span class="whitespace-nowrap">冀 ICP备2021001771号</span>
+                </a>
+                                </div>
+
+    </div>
+</footer>
+
+    <div id="tool" class="fixed right-5 bottom-5 flex space-y-1 flex-col z-50">
+                <div @click="darkMode = !darkMode" class="dark:text-zinc-300 md:hidden text-gray-600 dark:bg-black border border-gray-900/10 bg-white rounded text-center float-right cursor-pointer p-2">
+            <svg viewBox="0 0 24 24" class="dark:hidden h-5 w-5 stroke-current stroke-2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg viewBox="0 0 24 24" class="w-5 h-5 hidden dark:block text-sky-500 stroke-current stroke-2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </div>
+        <div @click="window.scroll({top: 0, left: 0, behavior: &#39;smooth&#39;});" class="dark:text-zinc-300 text-gray-600 dark:bg-black border border-gray-900/10 bg-white rounded text-center float-right cursor-pointer p-2">
+            <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M272.9 135.7C268.3 130.8 261.9 128 255.2 128C247.5 128.3 241.1 130.9 237.5 135.8l-87.25 96C143.8 238.9 142.2 249 146.1 257.7C149.9 266.4 158.5 272 167.1 272h56L224 360c0 13.25 10.75 24 24 24h16c13.25 0 23.1-10.75 23.1-24L287.1 272h56c9.531 0 18.16-5.656 22-14.38c3.811-8.75 2.092-18.91-4.377-25.91L272.9 135.7zM256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 464c-114.7 0-208-93.31-208-208S141.3 48 256 48s208 93.31 208 208S370.7 464 256 464z"></path>
+            </svg>
+        </div>
+    </div>
+    <!--Headroom-->
+    <!--MathJax-->
+
+    <!--Pjax-->
+    <script src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/flowbite.js.下载"></script>
+    <script src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/fslightbox.js.下载"></script>
+    <script src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/tocbot.js.下载"></script>
+    <script src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/alpine.min.js.下载" defer=""></script>
+    <script src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/toastify.js.下载"></script>
+    <script src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/app.js.下载"></script>
+    <script src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/prism.js.下载"></script>
+    <script src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/main.js.下载"></script>
+    <script src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/smooth.min.js.下载"></script>
+<!--天气--> 
+<script>
+WIDGET = {
+  "CONFIG": {
+    "modules": "01234",
+    "background": "5",
+    "tmpColor": "#409EFF",
+    "tmpSize": "16",
+    "cityColor": "#409EFF",
+    "citySize": "16",
+    "aqiColor": "#409EFF",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "fixed": "false",
+    "vertical": "top",
+    "horizontal": "left",
+    "key": "134a171c16cc450daa4e09b292557c01"
+  }
+}
+
+
+</script>
+<script src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/he-simple-common.js.下载"></script>
+
+<!--｛--------------------------------F12控制台---------------------------------｝-->
+<script type="text/javascript" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/console.js.下载"></script>
+
+<!--加载jQuery-->
+<script src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/jquery.min.js.下载" crossorigin="anonymous"></script>
+
+
+
+
+<!--倒计时-->
+<script async="" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/djs.js.下载"></script>
+
+<!--底部访问量-->
+<!--<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>--><script type="text/javascript">var php_Url = "https://blog.zytllt.cn/usr/plugins/Calendar/switchtable.php";</script>
+<script type="text/javascript" src="./分类 日常生活☀ 下的文章 - Anwen&#39;s Blog - 安稳博客!_files/calendar.js.下载" async="" defer=""></script>
+
+</body></html>
