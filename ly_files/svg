@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>blog::record - Chat Room</title>
+  <foreignObject width="500" height="300">
+    <body xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        ::selection {
+          background: #444;
+          color: #fff;
+        }
+
+        body {
+          margin: 0;;
+          padding: 0;
+        }
+
+        .container {
+          position: absolute;
+          bottom: 0;
+          font-size: 13px;
+        }
+        .container.light {
+          bottom: auto;
+          width: 100%;
+          height: 100%;
+          background: #fbfbfb;
+          border-radius: 5px;
+          line-height: 1.4;
+          color: #000;
+          padding-top: 30px;
+          border: 1px solid #d4d4d4;
+          box-sizing: border-box;
+          overflow: hidden;
+        }
+
+        .container.light::before {
+          content: "";
+          position: absolute;
+          background: #fbfbfb;
+          width: 100%;
+          height: 26px;
+          top: 0;
+          left: 0;
+          z-index: 2;
+        }
+
+        .container.light::after {
+          content: "";
+          position: absolute;
+          -webkit-border-radius: 50%;
+          border-radius: 50%;
+          background: #fc625d;
+          width: 12px;
+          height: 12px;
+          left: 10px;
+          margin-top: -24px;
+          -webkit-box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+          box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+          z-index: 2;
+        }
+
+        .container.light .content {
+          position: absolute;
+          bottom: 0;
+          padding: 6px 8px;
+        }
+        .container.light .content::before {
+          color: #21252b;
+          content: '👇聊天室(留言板)👇点击进入👇';
+          height: 26px;
+          line-height: 26px;
+          font-size: 12px;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          font-family: Ubuntu,sans-serif;
+          font-weight: 700;
+          padding: 0 80px;
+          text-align: center;
+          z-index: 2;
+          box-sizing: border-box;
+        }
+
+        .nickname {
+          padding-right: 5px;
+          color: brown;
+          font-family: Consolas, Monaco, monospace;
+          white-space: nowrap;
+        }
+        .name {
+          font-weight: bold;
+        }
+        .uid {
+          color: #cc1105;
+          font-weight: bold;
+        }
+        .time {
+          color: #6f6f6f;
+        }
+        .msg {
+          font-family: "Helvetica Neue", "PingFang SC", serif;
+          word-break: break-all;
+        }
+      </style>
+      <div class="container light">
+        <div class="content">
+        <div class="message">
+  <span class="nickname"><span class="name" style="color:#fc0303">anwen</span>::<span class="uid">N-xrEQL</span>::<span class="time">3/26/2022 7:23 PM</span>:</span><span class="msg" style="color:#ec13e5">Hi~欢迎来到我的博客聊天室~</span>
+</div><div class="message">
+  <span class="nickname"><span class="name" style="color:#117743">anwen</span>::<span class="uid">O0U9ZwH</span>::<span class="time">4/13/2022 6:21 AM</span>:</span><span class="msg" style="color:#3d3d3d">你好啊</span>
+</div><div class="message">
+  <span class="nickname"><span class="name" style="color:#117743">user_2l3yg</span>::<span class="uid">O0cJJnv</span>::<span class="time">4/14/2022 8:20 PM</span>:</span><span class="msg" style="color:#3d3d3d">test</span>
+</div><div class="message">
+  <span class="nickname"><span class="name" style="color:#117743">user_2l3yg</span>::<span class="uid">O0cJJnv</span>::<span class="time">4/14/2022 8:21 PM</span>:</span><span class="msg" style="color:#3d3d3d">wow blog talk</span>
+</div><div class="message">
+  <span class="nickname"><span class="name" style="color:#117743">user_2l3yg</span>::<span class="uid">O0cJJnv</span>::<span class="time">4/14/2022 8:21 PM</span>:</span><span class="msg" style="color:#3d3d3d">room</span>
+</div><div class="message">
+  <span class="nickname"><span class="name" style="color:#3ea871">52pj</span>::<span class="uid">O0htzw-</span>::<span class="time">4/15/2022 10:20 PM</span>:</span><span class="msg" style="color:#b94141">hello world</span>
+</div><div class="message">
+  <span class="nickname"><span class="name" style="color:#117743">user_h040a</span>::<span class="uid">O0hwEJz</span>::<span class="time">4/15/2022 10:28 PM</span>:</span><span class="msg" style="color:#3d3d3d">he tui</span>
+</div><div class="message">
+  <span class="nickname"><span class="name" style="color:#117743">user_hd2jl</span>::<span class="uid">O7Scuci</span>::<span class="time">7/8/2022 11:00 PM</span>:</span><span class="msg" style="color:#3d3d3d">.</span>
+</div><div class="message">
+  <span class="nickname"><span class="name" style="color:#117743">user_hd2jl</span>::<span class="uid">O7Scuci</span>::<span class="time">7/8/2022 11:00 PM</span>:</span><span class="msg" style="color:#3d3d3d">only one</span>
+</div>
+        </div>
+      </div>
+    </body>
+  </foreignObject>
+</svg>
